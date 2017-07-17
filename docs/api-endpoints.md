@@ -1,6 +1,6 @@
-#API Endpoints
+# API Endpoints
 ---
 
-##HTML API
+## HTML API
 ---
-###Root
+### Root
