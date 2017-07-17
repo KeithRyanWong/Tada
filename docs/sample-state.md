@@ -4,6 +4,11 @@
     id: 1,
     username: "app-academy"
   },
+  forms: {
+    signUp: {errors: []},
+    logIn: {errors: []},
+    createProject: {errors: ["Title can't be blank"]}
+  },
   projects: {
     1: {
       title: "Project",
