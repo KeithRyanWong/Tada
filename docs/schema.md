@@ -6,7 +6,7 @@ Column Name     | DataType  | Details
 id              | integer   | not null, primary key
 first_name      | string    | not null
 last_name       | string    | not null
-username       | string    | not null, indexed, unique
+username        | string    | not null, indexed, unique
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
@@ -25,6 +25,7 @@ Column Name     | DataType  | Details
 ----------------|-----------|-----------
 id              | integer   | not null, primary key
 project_id      | integer   | not null, foreign key (references projects), indexed
+order           | id        | not null, unique
 source_url      | string    | not null
 description     | text      |
 
