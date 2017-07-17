@@ -7,14 +7,21 @@ Rails.application.routes.draw do
       resources :projects, only: [:index]
     end
 
-    resources :projects, only: [:create, :update, :show, :destroy] do resources :items, shallow: true, except: [:new, :edit]
-      resources :comments, shallow: true, except: [:new, :edit, :show]
+    resources :projects, only: [:index, :create, :update, :show, :destroy] do 
+      resources :items, only: [:index]
+      resources :comments, only: [:index]
     end
 
+    resources :items, except: [:index, :new, :edit]
+
+    resources :comments, except: [:create, :new, :edit, :show]
+
     resources :likes, only: [:create, :destroy]
+
     resources :views, only: [:create]
 
-    resources :tags, only: [:create, :destroy]
+    resources :tags, only: [:create]
+    
     resources :taggings, only: [:create, :destroy]
 
     resources :follows, only: [:create, :destroy]
