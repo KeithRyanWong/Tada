@@ -16,6 +16,7 @@
   - ItemIndexContainer
     - item
   - UserGeneralDetailContainer
+  - CommentFormContainer
   - CommentsIndexContainer
     - CommentsItemContainer
 
@@ -32,13 +33,13 @@
 
 ## Routes
 
-|Path   | Component   |
-|-------|-------------|
-| "/"   | ExploreContainer
-| "/"  | HeaderFooterContainer
-| "/user/:id/projects/:project_id/item/:item_id | "ItemView"
-| "/user/:id/projects/:pid | "ProjectViewContainer"
-| "/user/:id | "ProfileContainer"
-| "/user/:id"  | HeaderFooterContainer
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
+|Path                                             | Component               |
+|-------------------------------------------------|-------------------------|
+| "/"                                             | ExploreContainer        |
+| "/"                                             | HeaderFooterContainer   |
+| "/user/:id/projects/:project_id/item/:item_id   | "ItemView"              |
+| "/user/:id/projects/:pid                        | "ProjectViewContainer"  |
+| "/user/:id                                      | "ProfileContainer"      |
+| "/user/:id"                                     | HeaderFooterContainer   |
+| "/sign-up"                                      | "AuthFormContainer"     |
+| "/sign-in"                                      | "AuthFormContainer"     |
