@@ -5,7 +5,7 @@
 [Trello link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]: https://trello.com/b/ALgfuX0Q/freshernote
+[trello]: https://trello.com/b/jyzAycpQ/tada
 
 ## Minimum Viable Product
 
@@ -41,26 +41,18 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Projects Model, Items Model, API, and components (3 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
+**Objective:** Projects can be created, viewed, edited through
 the API.
 
-### Phase 3: Notebooks (2 days)
+### Phase 3: Comments Model, API, and components and follows (2 days)
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Objective:** Users can comment on each other's posts and follow projects.
 
-### Phase 4: Tags (1 day)
+### Phase 4:  Profiles (2 day, W2 Th 6pm)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
-
-### Phase 5: Allow Complex Styling in Notes (1 day, W2 Th 6pm)
-
-**Objective:** Allow rich text editing of notes.
-
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
-
-**Objective:** Add infinite scroll to Notes Index
+**Objective:** Profiles show user information and all projects and followed projects.
 
 ### Bonus Features (TBD)
 - [ ] Tags
