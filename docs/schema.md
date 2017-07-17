@@ -34,7 +34,7 @@ Column Name     | DataType  | Details
 ----------------|-----------|-----------
 id              | integer   | not null, primary key
 project_id      | integer   | not null, foreign key (references projects), indexed
-user_id         | integer   | not null, foreign key (references users), indexed
+user_id         | integer   | not null, foreign key (references users), indexed, unique within scope of project_id
 
 ### Comments Table (Join Table)
 Column Name     | DataType  | Details
@@ -49,13 +49,13 @@ Column Name     | DataType  | Details
 ----------------|-----------|-----------
 id              | integer   | not null, primary key
 project_id      | integer   | not null, foreign key (references projects), indexed
-user_id         | integer   | not null, foreign key (references users), indexed
+user_id         | integer   | not null, foreign key (references users), indexed, unique within scope of project_id
 
 ### GalleryLinks Table (Join table)
 Column Name     | DataType  | Details
 ----------------|-----------|-----------
 id              | integer   | not null, primary key
-project_id      | integer   | not null, foreign key (references projects), indexed
+project_id      | integer   | not null, foreign key (references projects), indexed, unique within scope of gallery_id
 gallery_id      | integer   | not null, foreign key (references galleries), indexed
 
 ### Galleries Table
@@ -84,5 +84,5 @@ Column Name     | DataType  | Details
 ----------------|-----------|-----------
 id              | integer   | not null, primary key
 follower_id     | integer   | not null, foreign key (references users), indexed
-followee_id     | integer   | not null, foreign key (references users), indexed
+followee_id     | integer   | not null, foreign key (references users), indexed, unique within scope of follower_id
 
