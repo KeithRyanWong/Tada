@@ -26,9 +26,9 @@
  - UserFullDetailContainer
  - UserProjectsAndFollowsContainer
    - UserProjectsContainer
-     - ProjectsIndextItem
+     - UserProjectsIndextItem
    - UserFollowsContainer
-     - ProjectsIndexItem
+     - UserFollowedProjectsIndexItem
 
 ## Routes
 
