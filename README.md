@@ -20,7 +20,7 @@ sufficient CSS styling:
 - [ ] Profile exploration
 - [ ] Likes
 - [ ] Comments
-- [ ] Production README [sample](docs/production_readme.md)
+- [ ] Production README
 
 ## Design Docs
 * [View Wireframes][wireframes]
