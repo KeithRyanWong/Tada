@@ -40,11 +40,14 @@
 
 |Path                                             | Component               |
 |-------------------------------------------------|-------------------------|
-| "/"                                             | ExploreContainer        |
-| "/"                                             | HeaderFooterContainer   |
-| "/user/:id/projects/:project_id/item/:item_id   | "ItemView"              |
-| "/user/:id/projects/:pid                        | "ProjectViewContainer"  |
-| "/user/:id                                      | "ProfileContainer"      |
-| "/user/:id"                                     | HeaderFooterContainer   |
-| "/sign-up"                                      | "AuthFormContainer"     |
-| "/sign-in"                                      | "AuthFormContainer"     |
+| "/"                                             | DiscoverContainer       |
+| "/user/:id"                                     | PortfolioContainer      |
+| "/search"                                       | SearchContainer         |
+| "/galleries"                                    | GalleryIndexContainer   |
+| "/gallery/:id"                                  | GalleryShowContainer    |
+| "/projects"                                     | ProjectsIndexContainer  |
+| "/project/:id"                                  | ProjectShowContainer    |
+| "/item/:id"                                     | ItemShowContainer       |
+| "/session/new"                                  | AuthFormContainer       |
+| "/user/new"                                     | AuthFormContainer       |
+
