@@ -40,7 +40,9 @@
  - `POST   /api/likes` - create a like on a post
  - `DELETE /api/likes/:id` - unlike a post
 
-## Views
+
+<!-- *******BONUS******* -->
+<!-- ## Views
  - `POST   /api/views` - create a view linking a user to a project
 
 ## Tags
@@ -63,4 +65,4 @@
 
  ## Gallery Links
  - `POST   /api/gallerylinks` - add a project to a gallery
- - `DELETE /api/gallerylinks/:id` - remove a project from a gallery
+ - `DELETE /api/gallerylinks/:id` - remove a project from a gallery -->

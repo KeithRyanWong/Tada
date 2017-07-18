@@ -1,19 +1,24 @@
 ## Component Hierarchy
 
-**HeaderFooterContainer**
-  - Search
-  - SearchResults
+**DiscoverContainer**
+ - HeaderContainer
+ - ProjectsIndexContainer (Can re-use in other sections by utilizing mapped dispatch to select correct items?)
+   - ProjectsIndexItemContainer
+ - FooterComponent 
+
+**PortfolioContainer**
+ - HeaderContainer
+ - PortfolioDetailsContainer
+ - PortfolioContentContainer
+   - ProjectsIndexContainer
+     - ProjectsIndexItemContainer 
+ - FooterContainer
+
 
 **AuthFormContainer**
  - AuthForm
 
-**ExploreContainer**
- - ProjectsIndex
-   - ProjectsIndexItem
-
-**GalleryConainer**
-
-**ProjectViewContainer**
+**ProjectShowContainer**
   - ProjectHeaderContainer
   - ItemIndexContainer
     - item
@@ -22,7 +27,19 @@
   - CommentsIndexContainer
     - CommentsItemContainer
 
-**ItemView**
+<!-- **SearchContainer**
+ - HeaderContainer
+ - SearchIndexContainer
+ - FooterComponent -->
+
+<!-- **GalleriesConainer**
+ - GalleryIndexContainer
+   - ProjectsIndexItemContainer
+
+**GalleryContainer** -->
+
+
+**ItemShowContainer**
   - ItemsIndexContainer (Can I use the same container as in ProjectView and change display type?)
 
 **ProfileContainer**
@@ -38,16 +55,16 @@
 
 ## Routes
 
-|Path                                             | Component               |
-|-------------------------------------------------|-------------------------|
-| "/"                                             | DiscoverContainer       |
-| "/user/:id"                                     | PortfolioContainer      |
-| "/search"                                       | SearchContainer         |
-| "/galleries"                                    | GalleryIndexContainer   |
-| "/gallery/:id"                                  | GalleryShowContainer    |
-| "/projects"                                     | ProjectsIndexContainer  |
-| "/project/:id"                                  | ProjectShowContainer    |
-| "/item/:id"                                     | ItemShowContainer       |
-| "/session/new"                                  | AuthFormContainer       |
-| "/user/new"                                     | AuthFormContainer       |
+|Path                                             | Component                 |
+|-------------------------------------------------|---------------------------|
+| "/"                                             | **DiscoverContainer**     |
+| "/user/:id"                                     | **PortfolioContainer**    |
+<!-- | "/search"                                       | **SearchContainer**       | -->
+<!-- | "/galleries"                                    | **GalleriesContainer**    |
+| "/gallery/:id"                                  | **GalleryShowContainer**  | -->
+| "/project/:id"                                  | **ProjectShowContainer**  |
+| "/project/new"                                  | **ProjectFormContainer**  |
+| "/item/:id"                                     | **ItemShowContainer**     |
+| "/session/new"                                  | **AuthFormContainer**     |
+| "/user/new"                                     | **AuthFormContainer**     |
 

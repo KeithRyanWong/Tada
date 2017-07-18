@@ -2,8 +2,7 @@
 {
   currentUser: {
     errors: [],
-    id: 1,
-    username: "app-academy"
+    id: 1
   },
   users: {
     errors: [],
@@ -17,21 +16,8 @@
         follow_ids: [3, 4, 5]
       }
     }
-  }
-  galleries: {
-    errors: [],
-    byId: {
-      1: {
-        id: 1,
-        title: "Gallery of cool projects",
-        description: "This is a gallery of cool posts",
-        imageURL: "www.thisisapicture.com/asdkljf.png",
-        project_ids: [1, 2, 3, 4]
-      }
-    }
-  }
+  },
   projects: {
-    errors: [],
     byId: {
       1: {
         title: "Cool Project",
@@ -46,7 +32,6 @@
     }
   },
   items: {
-    errors: [],
     byId: {
       1: {
         projectId: 1,
@@ -54,7 +39,7 @@
         description: "This is a cool artwork"
       }
     }
-  }
+  },
   comments: {
     errors: [],
     byId: {
@@ -65,7 +50,19 @@
         body: "This is so cool"
       }
     }
-  }
+  },
+  galleries: {
+    errors: [],
+    byId: {
+      1: {
+        id: 1,
+        title: "Gallery of cool projects",
+        description: "This is a gallery of cool posts",
+        imageURL: "www.thisisapicture.com/asdkljf.png",
+        project_ids: [1, 2, 3, 4]
+      }
+    }
+  },
   tags: {
     errors: [],
     byId: {
@@ -74,7 +71,7 @@
         name: ''
       }
     }
-  }
+  },
   tagFilters: [1] // Used to track selected Tags for filtering of notes
 }
 ```
