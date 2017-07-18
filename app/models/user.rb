@@ -5,7 +5,7 @@ class User < ApplicationRecord
             :last_name,
             :email,
             :username,
-            :password_digest,
+            :password,
             :session_token,
             presence: true
   validates :username,
