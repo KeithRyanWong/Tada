@@ -11,6 +11,8 @@
  - ProjectsIndex
    - ProjectsIndexItem
 
+**GalleryConainer**
+
 **ProjectViewContainer**
   - ProjectHeaderContainer
   - ItemIndexContainer
@@ -30,6 +32,9 @@
      - UserProjectsIndextItem
    - UserFollowsContainer
      - UserFollowedProjectsIndexItem
+
+**ProjectFormContainer**
+  - ProjectForm
 
 ## Routes
 

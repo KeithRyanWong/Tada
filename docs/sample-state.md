@@ -7,60 +7,72 @@
   },
   users: {
     errors: [],
-    1: {
-      id: 1,
-      firstName: "Keith",
-      lastName: "Wong",
-      username: "KoolKeith",
-      imageURL: "www.aklaej.com/Keith.png",
-      follow_ids: [3, 4, 5]
+    byId: {
+      1: {
+        id: 1,
+        firstName: "Keith",
+        lastName: "Wong",
+        username: "KoolKeith",
+        imageURL: "www.aklaej.com/Keith.png",
+        follow_ids: [3, 4, 5]
+      }
     }
   }
   galleries: {
     errors: [],
-    1: {
-      id: 1,
-      title: "Gallery of cool projects",
-      description: "This is a gallery of cool posts",
-      imageURL: "www.thisisapicture.com/asdkljf.png",
-      project_ids: [1, 2, 3, 4]
+    byId: {
+      1: {
+        id: 1,
+        title: "Gallery of cool projects",
+        description: "This is a gallery of cool posts",
+        imageURL: "www.thisisapicture.com/asdkljf.png",
+        project_ids: [1, 2, 3, 4]
+      }
     }
   }
   projects: {
     errors: [],
-    1: {
-      title: "Cool Project",
-      userId: 1,
-      splashId: 12,
-      item_ids = [12, 54, 32]
-      tag_ids: [1, 2, 3, 4],
-      comment_ids: [23, 45, 76],
-      likes: 89475,
-      views: 90000
+    byId: {
+      1: {
+        title: "Cool Project",
+        userId: 1,
+        splashId: 12,
+        item_ids = [12, 54, 32]
+        tag_ids: [1, 2, 3, 4],
+        comment_ids: [23, 45, 76],
+        likes: 89475,
+        views: 90000
+      }
     }
   },
   items: {
     errors: [],
-    1: {
-      projectId: 1,
-      title: "Cool Artwork",
-      description: "This is a cool artwork"
+    byId: {
+      1: {
+        projectId: 1,
+        title: "Cool Artwork",
+        description: "This is a cool artwork"
+      }
     }
   }
   comments: {
     errors: [],
-    1: {
-      id: 1
-      projectId: 1,
-      userId: 1,
-      body: "This is so cool"
+    byId: {
+      1: {
+        id: 1
+        projectId: 1,
+        userId: 1,
+        body: "This is so cool"
+      }
     }
   }
   tags: {
     errors: [],
-    1: {
-      id: 1
-      name: ''
+    byId: {
+      1: {
+        id: 1
+        name: ''
+      }
     }
   }
   tagFilters: [1] // Used to track selected Tags for filtering of notes
