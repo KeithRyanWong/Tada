@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
   entry: './frontend/tada.jsx',
   output: {
-    filename: './app/assests/javascripts/bundle.js',
+    filename: './app/assets/javascripts/bundle.js',
   },
   module: {
     loaders: [
