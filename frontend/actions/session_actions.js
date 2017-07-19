@@ -14,6 +14,10 @@ export const receiveErrors = ({ errors }) => ({
   errors
 });
 
+export const receiveUpdates = (currentUser) => ({
+  type: RECEIVE_CURRENT_USER,
+  currentUser
+});
 
 
 // thunk action creators
@@ -38,6 +42,14 @@ export const signup = user => dispatch => {
           error => dispatch(receiveErrors(error.responseJSON)));
 };
 
+export const updateUser = user => dispatch => {
+  APIUtil
+    .updateUser(user)
+    .then(currentUser => dispatch(receiveUpdates(currentUser)),
+          error => dispatch(receiveErrors(error.responseJSON)));
+};
+
 window.signup = signup;
 window.login = login;
 window.logout = logout;
+window.updateUser = updateUser;
