@@ -21,17 +21,12 @@ class ApplicationController < ActionController::Base
   end
 
   def logout
-    @current_user.reset_session_token!
+    current_user.reset_session_token!
     session[:session_token] = nil
     @current_user = nil
   end
 
   def require_logged_in
     render json: {base: ['invalid credentials']}, status: 401 if !current_user
-  end
-
-  def require_permissions(owner)
-    require_logged_in
-    render json: {base: ["user doesn't have permissions"]}, status: 401 if current_user.id != owner.id
   end
 end

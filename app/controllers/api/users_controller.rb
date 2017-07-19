@@ -1,6 +1,5 @@
 class Api::UsersController < ApplicationController
   before_action :require_logged_in, only: [:update]
-  # before_action :require_permissions, only: [:update]
 
   def create
     @user = User.new(user_params)
@@ -14,11 +13,16 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    # require_permissions(@user)
-    @user.update(user_params)
-    # render :show
-    render json: @user
+    if params[:id] != current_user.id.to_s
+      render json: ["YOU CAN'T DO THAT", params[:id], current_user.id]
+    else
+      @user = User.find(params[:id])
+      logout
+      @user.update(user_params)
+      login(@user)
+      # render :show
+      render json: @user
+    end
   end
 
   private
