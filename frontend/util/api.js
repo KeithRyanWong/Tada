@@ -1,3 +1,10 @@
+export const fetchSession = () => (
+  $.ajax({
+    url: "/api/session",
+    method: "GET"
+  })
+);
+
 export const signup = (user) => (
   $.ajax({
     url: "/api/users",
@@ -17,7 +24,7 @@ export const login = (user) => (
 export const logout = () => (
   $.ajax({
     url: "/api/session",
-    method: "DELETE",
+    method: "DELETE"
   })
 );
 
