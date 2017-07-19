@@ -27,6 +27,17 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logged_in
-    render json: {base: ['invalid credentials']}, status: 401 if !current_user
+    # renders as {"errors": ["Login required"]} 
+    if !current_user
+      flash.now[:errors] = ["Login required"]
+      render 'api/users/show', status: 401 
+    end
+  end
+
+  def require_logged_out
+    if logged_in?
+      flash.now[:errors] = ["Must be logged out to do that"]
+      render 'api/users/show', status: 401 
+    end
   end
 end
