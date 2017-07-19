@@ -23,7 +23,12 @@
     "doc": "docs",
     "test": "test"
   },
+  "engines": {
+    "node": "6.10.0",
+    "npm": "3.10.10"
+  },
   "scripts": {
+    "postinstall": "webpack",
     "webpack": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
