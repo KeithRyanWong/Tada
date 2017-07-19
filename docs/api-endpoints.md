@@ -14,7 +14,7 @@
 ## Session
  - `POST   /api/session` - start a new session
  - `DELETE /api/session` - logout a session
-
+ 
 ## Projects
  - `GET    /api/projects` - fetch all projects from database
  - `GET    /api/users/:user_id/projects` - fetch all projects for a user
