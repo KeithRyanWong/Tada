@@ -18,7 +18,7 @@ class Discover extends React.Component {
   render() {
     return (
       <div className="grid-container">
-        <HeaderContainer store={this.props.store}/>
+        <HeaderContainer />
         {/* <div style={ {height: '900px' }}></div> */}
       </div>
     );

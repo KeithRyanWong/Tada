@@ -1,16 +1,11 @@
 import { connect } from 'react-redux';
 import Discover from './discover'; 
 
-// import { logout } from '../../actions/session_actions';
 
-
-const mapStateToProps = (store) => ({
-  store
+const mapStateToProps = (state) => ({
+  state
 });
 
-// const mapDispatchToProps = (dispatch) => ({
-//   logout: () => dispatch(logout())
-// });
 
 export default connect(
   mapStateToProps

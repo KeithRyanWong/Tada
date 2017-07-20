@@ -16,7 +16,7 @@ class Header extends React.Component {
     console.log(this.props);
     const authComponent = this.props.currentUser.id ? 
       <button onClick={this.handleLogout}>Logout</button> :
-      <AuthContainer store={this.props.state} action={"Sign in"}/>;
+      <AuthContainer action={"Sign in"}/>;
 
 
     return (

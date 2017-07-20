@@ -4,9 +4,8 @@ import Header from './header';
 import { logout } from '../../actions/session_actions';
 
 
-const mapStateToProps = ({currentUser}, {store}) => ({
-  currentUser,
-  store
+const mapStateToProps = ({currentUser}) => ({
+  currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({
