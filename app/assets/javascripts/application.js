@@ -14,3 +14,8 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
+
+//has to go on component
+// document.addEventListener('DOMContentLoaded', () => {
+  
+// });

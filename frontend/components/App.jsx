@@ -1,8 +1,13 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+
+import Discover from './main/discover';
 
 const App = () => (
   <div>
-    <h1>Ta-Da!!</h1>
+    <Switch>
+      <Route path='/' component={Discover}/>
+    </Switch>
   </div>
 );
 
