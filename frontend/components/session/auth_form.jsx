@@ -101,23 +101,6 @@ render() {
     );
   }
 
-    // return (
-    //   <div>
-    //     <div id='sign-in' className="sign-in-link">Sign in
-    //     <div className="drop-down-authform-container">
-    //       <div className="dropdown">
-    //         <form className="authform">
-    //           <input type="text" onChange={this.update('username')} placeholder="username" value={username}/>
-              
-              
-    //           <input type="password" onChange={this.update('password')} placeholder="password" value={password}/>
-    //           
-    //           <button onClick={this.submit}>{this.props.action}}</button>
-    //         </form>
-    //       </div>
-    //     </div>
-    //   </div>
-    // );
   }
 }
 
