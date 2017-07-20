@@ -24,6 +24,7 @@ class Header extends React.Component {
       <div className="header-container">
         <div className='header'>
           <div className='header-section left'>
+            <img src="http://res.cloudinary.com/krwappacademy/image/upload/c_scale,w_40/v1500587178/whitelogo_tbugdt.png" />
             {/* <img className='header-content logo' src="./logo.png"/>
             <img className='header-content logo2' src="./logo2.png"/> */}
           </div>
