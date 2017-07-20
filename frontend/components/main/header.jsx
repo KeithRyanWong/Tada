@@ -15,7 +15,7 @@ class Header extends React.Component {
   
   render() {
     const authComponent = this.props.currentUser.id ? 
-    <button onClick={this.handleLogout}>Logout</button> :
+    <div className="sign-in-link" onClick={this.handleLogout}>Logout</div> :
     <AuthContainer action={"Sign in"}/>;
     
     const signUpComponent = this.props.currentUser.id ? 
@@ -28,7 +28,7 @@ class Header extends React.Component {
             <div className='header-content'>
               <Link to='/'>
                 <img src="http://res.cloudinary.com/krwappacademy/image/upload/c_scale,w_40/v1500587178/whitelogo_tbugdt.png" />
-                <img src="http://res.cloudinary.com/krwappacademy/image/upload/c_scale,h_37/v1500587279/WhiteLogo2_gxrer6.png"/>
+                <img className="logo2" src="http://res.cloudinary.com/krwappacademy/image/upload/c_scale,h_37/v1500587279/WhiteLogo2_gxrer6.png"/>
               </Link>
             </div>
           </div>
