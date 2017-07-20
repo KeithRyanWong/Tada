@@ -16,18 +16,8 @@ class AuthForm extends React.Component {
     this.update = this.update.bind(this);
     this.submit = this.submit.bind(this);
     this.activateSignInLink = this.activateSignInLink.bind(this);
-    this.activateClickOut = this.activateClickOut.bind(this);
   }
 
-  
-  // componentDidMount() {
-  //   document.getElementById('sign-in').addEventListener('click', this.activateSignInLink);
-  // }
-
-  componentWillUnmount() {
-    document.getElementById('sign-in').removeEventListener('click', this.activateSignInLink);
-    document.removeEventListener('click', this.activateClickOut);
-  }
 
   activateSignInLink(event) {
     event.preventDefault();
@@ -35,31 +25,14 @@ class AuthForm extends React.Component {
     if (!event.currentTarget.className.includes('show')) {
       event.currentTarget.className += ' show';
     }
-
-    document.getElementsByTagName('body')[0].addEventListener('click', this.activateClickOut);
   }
 
-  activateClickOut(event) {
-    event.preventDefault();
 
-    this.hideForms();
-
-    this.setState({ username: '',
-                    first_name: '',
-                    last_name: '',
-                    email: '',
-                    password: '',
-                    image_url: ''
-                  });
-
-    document.removeEventListener('click', this.activateClickOut);
-  }
   
   hideForms() {
     let signInLinks = document.getElementsByClassName('sign-in-link');
     Array.prototype.forEach.call(signInLinks, (link) => {
       let newClassName = link.className;
-      console.log(newClassName);
       newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
       link.className = newClassName;
     });
@@ -68,15 +41,16 @@ class AuthForm extends React.Component {
   update(field) {
     return e => {
       e.preventDefault();
+      e.stopPropagation();
       this.setState( {[field]: e.target.value });
     };
   }
   
   submit(e) {
     e.preventDefault();
+    e.stopPropagation();
     this.submitAction(this.state);
     this.hideForms();
-    document.removeEventListener('click', this.activateClickOut);
     this.setState({ username: '',
                     first_name: '',
                     last_name: '',
@@ -98,7 +72,7 @@ render() {
               <form className="authform">
                 <input type="text" onChange={this.update('username')} placeholder="username" value={username}/>
                 <input type="password" onChange={this.update('password')} placeholder="password" value={password}/>
-                <button className="submit">{this.props.action} </button>
+                <button onClick={this.submit} className="submit">{this.props.action} </button>
               </form>
             </div>
           </div>
