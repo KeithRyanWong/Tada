@@ -1,0 +1,23 @@
+.drop-down-authform-container > form {
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px;
+  position: relative;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-form {
+  right:140px;
+}
+
+.drop-down-authform-container > form > input {
+  margin-bottom: 5px;
+}
+
+.drop-down-authform-container > form > button {
+  padding: 5px;
+    
+  font-weight: bold;
+}

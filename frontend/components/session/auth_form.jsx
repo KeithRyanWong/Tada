@@ -86,14 +86,14 @@ render() {
       <div>
         <div onClick={this.activateSignInLink} className="sign-in-link">Sign in
           <div className="drop-down-authform-container">
-            <div className="dropdown">
-              <form className="authform">
-                <input type="text" onChange={this.update('username')} placeholder="username" value={username}/>
-                <input type="password" onChange={this.update('password')} placeholder="password" value={password}/>
+
+              <form className="sign-in-form">
+                <input type="text" onChange={this.update('username')} placeholder="Username" value={username}/>
+                <input type="password" onChange={this.update('password')} placeholder="Password" value={password}/>
                 <button onClick={this.submit} className="submit">{this.props.action} </button>
                 <button onClick={this.loginGuest} className="submit">Guest Login</button>
               </form>
-            </div>
+
           </div>
         </div>
       </div>
@@ -103,18 +103,18 @@ render() {
       <div>
         <div onClick={this.activateSignInLink} className="sign-in-link">Sign Up
           <div className="drop-down-authform-container">
-            <div className="dropdown">
-              <form className="authform">
-                <input type="text" onChange={this.update('username')} placeholder="username" value={username}/>
+
+              <form className="sign-up-form">
+                <input type="text" onChange={this.update('username')} placeholder="Username" value={username}/>
                 <input type="text" onChange={this.update('first_name')} placeholder="First Name" value={first_name}/>
                 <input type="text" onChange={this.update('last_name')} placeholder="Last Name" value={last_name}/>
-                <input type="text" onChange={this.update('email')} placeholder="email" value={email}/>
-                <input type="password" onChange={this.update('password')} placeholder="password" value={password}/>
+                <input type="text" onChange={this.update('email')} placeholder="Email" value={email}/>
+                <input type="password" onChange={this.update('password')} placeholder="Password" value={password}/>
                 <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url}/>
                 <button onClick={this.submit} className="submit">{this.props.action} </button>
                 <button onClick={this.loginGuest} className="submit">Guest Login</button>
               </form>
-            </div>
+
           </div>
         </div>
       </div>
