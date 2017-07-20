@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://tada-application.herokuapp.com
 [trello]: https://trello.com/b/jyzAycpQ/tada
 
 ## Minimum Viable Product
