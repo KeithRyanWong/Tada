@@ -16,6 +16,7 @@ class AuthForm extends React.Component {
     this.update = this.update.bind(this);
     this.submit = this.submit.bind(this);
     this.activateSignInLink = this.activateSignInLink.bind(this);
+    this.loginGuest = this.loginGuest.bind(this);
   }
 
 
@@ -60,6 +61,23 @@ class AuthForm extends React.Component {
                   }); 
   }
 
+  loginGuest(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.login({
+      username: 'KRWong12',
+      password: 'thisisapass'
+    });
+    this.hideForms();
+    this.setState({ username: '',
+                    first_name: '',
+                    last_name: '',
+                    email: '',
+                    password: '',
+                    image_url: ''
+                  }); 
+  }
+
 render() {
   const {username, first_name, last_name, email, password, img_url} = this.state;
   
@@ -73,6 +91,7 @@ render() {
                 <input type="text" onChange={this.update('username')} placeholder="username" value={username}/>
                 <input type="password" onChange={this.update('password')} placeholder="password" value={password}/>
                 <button onClick={this.submit} className="submit">{this.props.action} </button>
+                <button onClick={this.loginGuest} className="submit">Guest Login</button>
               </form>
             </div>
           </div>
@@ -93,6 +112,7 @@ render() {
                 <input type="password" onChange={this.update('password')} placeholder="password" value={password}/>
                 <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url}/>
                 <button onClick={this.submit} className="submit">{this.props.action} </button>
+                <button onClick={this.loginGuest} className="submit">Guest Login</button>
               </form>
             </div>
           </div>
