@@ -1,5 +1,6 @@
 import React from 'react';
 import AuthContainer from '../session/auth_form_container';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   constructor(props) {
@@ -24,9 +25,12 @@ class Header extends React.Component {
       <div className="header-container">
         <div className='header'>
           <div className='header-section left'>
-            <img src="http://res.cloudinary.com/krwappacademy/image/upload/c_scale,w_40/v1500587178/whitelogo_tbugdt.png" />
-            {/* <img className='header-content logo' src="./logo.png"/>
-            <img className='header-content logo2' src="./logo2.png"/> */}
+            <div className='header-content'>
+              <Link to='/'>
+                <img src="http://res.cloudinary.com/krwappacademy/image/upload/c_scale,w_40/v1500587178/whitelogo_tbugdt.png" />
+                <img src="http://res.cloudinary.com/krwappacademy/image/upload/c_scale,h_37/v1500587279/WhiteLogo2_gxrer6.png"/>
+              </Link>
+            </div>
           </div>
           <div className='header-section middle'>
             {/* <div className='header-content'>Activity</div>
