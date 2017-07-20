@@ -15,7 +15,3 @@
  */
 
 /*Remove padding and margins, add borders for dev*/
-@import 'api/explore.scss';
-@import 'api/header.scss';
-@import 'api/auth.scss'; 
-@import 'api/reset.scss';
