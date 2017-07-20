@@ -18,11 +18,8 @@ class Discover extends React.Component {
 
   activateClickOut(e) {
     event.preventDefault();
-    
-        this.hideForms();
-        console.log(event.currentTarget);
-        console.log(event.target);
-        console.log("I'm gonnahide");
+    event.stopPropagation();
+    this.hideForms();
   }
 
   hideForms() {

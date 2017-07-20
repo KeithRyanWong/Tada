@@ -61,7 +61,7 @@ class AuthForm extends React.Component {
   }
 
 render() {
-  const {username, firstName, lastName, email, password, img_url} = this.state;
+  const {username, first_name, last_name, email, password, img_url} = this.state;
   
   if (this.props.action === 'Sign in') {
     return (
@@ -87,8 +87,8 @@ render() {
             <div className="dropdown">
               <form className="authform">
                 <input type="text" onChange={this.update('username')} placeholder="username" value={username}/>
-                <input type="text" onChange={this.update('firstName')} placeholder="First Name" value={firstName}/>
-                <input type="text" onChange={this.update('lastName')} placeholder="Last Name" value={lastName}/>
+                <input type="text" onChange={this.update('first_name')} placeholder="First Name" value={first_name}/>
+                <input type="text" onChange={this.update('last_name')} placeholder="Last Name" value={last_name}/>
                 <input type="text" onChange={this.update('email')} placeholder="email" value={email}/>
                 <input type="password" onChange={this.update('password')} placeholder="password" value={password}/>
                 <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url}/>
