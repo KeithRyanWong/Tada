@@ -25,7 +25,7 @@ Column Name     | DataType  | Details
 ----------------|-----------|-----------
 id              | integer   | not null, primary key
 project_id      | integer   | not null, foreign key (references projects), indexed
-order           | id        | not null, unique
+order           | integer   | not null, unique
 source_url      | string    | not null
 description     | text      |
 
