@@ -1,12 +1,12 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#sign-in-link {
+#sign-in {
    /* only prop necessary for button */
   position: relative;
 }
 
-.show > #drop-down-authform-container{
+.show > .drop-down-authform-container{
   visibility: visible; /* shows sub-menu */
   opacity: 1;
   z-index: 1;
@@ -14,7 +14,7 @@
   transition-delay: 0s, 0s, 0.3s;
 }
 
-#drop-down-authform-container {
+.drop-down-authform-container {
   visibility: hidden; /* hides sub-menu */
   opacity: 0;
   position: absolute;
