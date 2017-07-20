@@ -107,7 +107,6 @@ render() {
     //handle clicking outside of form
     document.addEventListener('click', (event) => {
       event.preventDefault();
-      console.log(event.target);
       if (event.target.className !== "drop-down-authform-container" && 
           event.target.className !== "sign-in-link") {
         
