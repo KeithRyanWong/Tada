@@ -1,15 +1,29 @@
+.sign-in-link {
+  color: white;
+}
+
+.sign-in-link:hover {
+  cursor: pointer;
+}
+
 .drop-down-authform-container > form {
-  border: 1px solid black;
+  border: 1px solid #505050;
+  border-radius: 3px;
   background-color: white;
   padding: 10px;
   position: relative;
   width: 200px;
   display: flex;
   flex-direction: column;
+
+  box-shadow: -3px 4px 15px 1px rgba(0, 0, 0, 0.2);
 }
 
 .sign-in-form {
-  right:140px;
+  right:150px;
+}
+.sign-in-form > input {
+  margin-right: 20px;
 }
 
 .drop-down-authform-container > form > input {
@@ -17,7 +31,46 @@
 }
 
 .drop-down-authform-container > form > button {
+  margin-bottom: 2px;
   padding: 5px;
-    
+  border-radius: 2px;
   font-weight: bold;
 }
+
+.drop-down-authform-container > form > button:nth-last-child(2) {
+  background: #3e6c8a;
+  background-image: -webkit-linear-gradient(top, #3e6c8a, #5295bf);
+  background-image: -o-linear-gradient(top, #3e6c8a, #5295bf);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3e6c8a), to(#5295bf));
+  background-image: linear-gradient(to bottom, #3e6c8a, #5295bf);
+  
+}
+
+.drop-down-authform-container > form > button:nth-last-child(1) {
+  background: #48ff00;
+  background-image: -webkit-linear-gradient(top, #48ff00, #00ff59);
+  background-image: -o-linear-gradient(top, #48ff00, #00ff59);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#48ff00), to(#00ff59));
+  background-image: linear-gradient(to bottom, #48ff00, #00ff59);
+}
+
+.drop-down-authform-container > form > button {
+  border: none;
+  border-radius: 4px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.drop-down-authform-container > form > button:nth-last-child(2):hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+.drop-down-authform-container > form > button:nth-last-child(1):hover {
+  background: #6cfc3c;
+  text-decoration: none;
+}
+
