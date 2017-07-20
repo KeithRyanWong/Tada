@@ -20,9 +20,9 @@ class AuthForm extends React.Component {
   }
 
   
-  componentDidMount() {
-    document.getElementById('sign-in').addEventListener('click', this.activateSignInLink);
-  }
+  // componentDidMount() {
+  //   document.getElementById('sign-in').addEventListener('click', this.activateSignInLink);
+  // }
 
   componentWillUnmount() {
     document.getElementById('sign-in').removeEventListener('click', this.activateSignInLink);
@@ -32,28 +32,18 @@ class AuthForm extends React.Component {
   activateSignInLink(event) {
     event.preventDefault();
     event.stopPropagation();
-    event.currentTarget.className = 'show';
-    if(event.target.className.includes('submit')) {
-      this.submit(event);
-      let newClassName = event.currentTarget.className;
-      newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
-      event.currentTarget.className = newClassName;
-
-      document.removeEventListener('click', this.activateClickOut);
+    if (!event.currentTarget.className.includes('show')) {
+      event.currentTarget.className += ' show';
     }
 
-    document.addEventListener('click', this.activateClickOut);
+    document.getElementsByTagName('body')[0].addEventListener('click', this.activateClickOut);
   }
 
   activateClickOut(event) {
     event.preventDefault();
 
-    let signInLink = document.getElementById('sign-in');
-    let newClassName = signInLink.className;
-    newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
-    signInLink.className = newClassName;
+    this.hideForms();
 
-    
     this.setState({ username: '',
                     first_name: '',
                     last_name: '',
@@ -65,6 +55,15 @@ class AuthForm extends React.Component {
     document.removeEventListener('click', this.activateClickOut);
   }
   
+  hideForms() {
+    let signInLinks = document.getElementsByClassName('sign-in-link');
+    Array.prototype.forEach.call(signInLinks, (link) => {
+      let newClassName = link.className;
+      console.log(newClassName);
+      newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
+      link.className = newClassName;
+    });
+  }
   
   update(field) {
     return e => {
@@ -76,14 +75,16 @@ class AuthForm extends React.Component {
   submit(e) {
     e.preventDefault();
     this.submitAction(this.state);
+    this.hideForms();
+    document.removeEventListener('click', this.activateClickOut);
     this.setState({ username: '',
                     first_name: '',
                     last_name: '',
                     email: '',
                     password: '',
                     image_url: ''
-                  });
-}
+                  }); 
+  }
 
 render() {
   const {username, firstName, lastName, email, password, img_url} = this.state;
@@ -91,12 +92,12 @@ render() {
   if (this.props.action === 'Sign in') {
     return (
       <div>
-        <div id='sign-in' className="sign-in-link">Sign in
+        <div onClick={this.activateSignInLink} className="sign-in-link">Sign in
           <div className="drop-down-authform-container">
             <div className="dropdown">
               <form className="authform">
                 <input type="text" onChange={this.update('username')} placeholder="username" value={username}/>
-                <input type="text" onChange={this.update('password')} placeholder="password" value={password}/>
+                <input type="password" onChange={this.update('password')} placeholder="password" value={password}/>
                 <button className="submit">{this.props.action} </button>
               </form>
             </div>
@@ -106,64 +107,25 @@ render() {
     );
   }
 
-// return (
-  //   <div>
-  //     <button id='sign-in' className='sign-in-link'>Sign up</button>
-  //     <div className="drop-down-authform-container">
-  //       <div className="dropdown">
-  //         <form className="authform">
-  //           <input type="text" onChange={this.update('username')} placeholder="username" value={username}/>
-  //           <input type="text" onChange={this.update('firstName')} placeholder="First Name" value={firstName}/>
-  //           <input type="text" onChange={this.update('lastName')} placeholder="Last Name" value={lastName}/>
-  //           <input type="text" onChange={this.update('email')} placeholder="email" value={email}/>
-  //           <input type="text" onChange={this.update('password')} placeholder="password" value={password}/>
-  //           <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url}/>
-  //           <button onClick={this.submit}>{this.props.action}}</button>
-  //         </form>
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
+    // return (
+    //   <div>
+    //     <div id='sign-in' className="sign-in-link">Sign in
+    //     <div className="drop-down-authform-container">
+    //       <div className="dropdown">
+    //         <form className="authform">
+    //           <input type="text" onChange={this.update('username')} placeholder="username" value={username}/>
+    //           <input type="text" onChange={this.update('firstName')} placeholder="First Name" value={firstName}/>
+    //           <input type="text" onChange={this.update('lastName')} placeholder="Last Name" value={lastName}/>
+    //           <input type="text" onChange={this.update('email')} placeholder="email" value={email}/>
+    //           <input type="password" onChange={this.update('password')} placeholder="password" value={password}/>
+    //           <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url}/>
+    //           <button onClick={this.submit}>{this.props.action}}</button>
+    //         </form>
+    //       </div>
+    //     </div>
+    //   </div>
+    // );
   }
-  
-  // addClickEventToLink() {
-  //   document.getElementById("sign-in").addEventListener('click', (event) => {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //     let currentClass = event.currentTarget.className;
-  //     event.currentTarget.className = 'show';
-  //     if (event.target.className.includes('submit')){
-  //       this.submit(event);
-  //       this.setState(this.state = { username: '',
-  //                               first_name: '',
-  //                               last_name: '',
-  //                               email: '',
-  //                               password: '',
-  //                               image_url: ''
-  //                               });
-  //       document.getElementById("sign-in").className = '';
-  //     }
-  //   });
-    
-  //   //handle clicking outside of form
-  //   document.addEventListener('click', (event) => {
-  //     event.preventDefault();
-  //     if (event.target.className !== "drop-down-authform-container" && 
-  //         event.target.className !== "sign-in-link") {
-        
-  //       document.getElementById("sign-in").className = '';
-
-  //       this.setState(this.state = { username: '',
-  //                               first_name: '',
-  //                               last_name: '',
-  //                               email: '',
-  //                               password: '',
-  //                               image_url: ''
-  //                               });
-  //     }
-  //   });
-    
-  // }
 }
 
 export default AuthForm;

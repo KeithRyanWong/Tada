@@ -11,12 +11,14 @@ class Header extends React.Component {
     e.preventDefault();
     this.props.logout();
   }
-
+  // const signUpComponent = this.props.currentUser.id ? 
+  //   <button>Create Project</button> :
+  //   <AuthContainer action={"Sign up"}/>;
+  
   render() {
     const authComponent = this.props.currentUser.id ? 
       <button onClick={this.handleLogout}>Logout</button> :
       <AuthContainer action={"Sign in"}/>;
-
 
     return (
       <div className="header-container">
@@ -29,6 +31,9 @@ class Header extends React.Component {
             {/* <div className='header-content'>Activity</div>
             <div className='header-content'>Galleries</div>
             <div className='header-content'>signup</div> */}
+            <div className='header-content'>
+              {authComponent}
+            </div>
           </div>
           <div className='header-section right'>
             {/* <div className='header-content'>search-link</div>*/}
