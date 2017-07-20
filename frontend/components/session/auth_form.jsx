@@ -79,6 +79,26 @@ render() {
         </div>
       </div>
     );
+  } else {
+    return (
+      <div>
+        <div onClick={this.activateSignInLink} className="sign-in-link">Sign Up
+          <div className="drop-down-authform-container">
+            <div className="dropdown">
+              <form className="authform">
+                <input type="text" onChange={this.update('username')} placeholder="username" value={username}/>
+                <input type="text" onChange={this.update('firstName')} placeholder="First Name" value={firstName}/>
+                <input type="text" onChange={this.update('lastName')} placeholder="Last Name" value={lastName}/>
+                <input type="text" onChange={this.update('email')} placeholder="email" value={email}/>
+                <input type="password" onChange={this.update('password')} placeholder="password" value={password}/>
+                <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url}/>
+                <button onClick={this.submit} className="submit">{this.props.action} </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
     // return (
@@ -88,11 +108,10 @@ render() {
     //       <div className="dropdown">
     //         <form className="authform">
     //           <input type="text" onChange={this.update('username')} placeholder="username" value={username}/>
-    //           <input type="text" onChange={this.update('firstName')} placeholder="First Name" value={firstName}/>
-    //           <input type="text" onChange={this.update('lastName')} placeholder="Last Name" value={lastName}/>
-    //           <input type="text" onChange={this.update('email')} placeholder="email" value={email}/>
+              
+              
     //           <input type="password" onChange={this.update('password')} placeholder="password" value={password}/>
-    //           <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url}/>
+    //           
     //           <button onClick={this.submit}>{this.props.action}}</button>
     //         </form>
     //       </div>
