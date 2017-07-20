@@ -15,15 +15,56 @@ class AuthForm extends React.Component {
 
     this.update = this.update.bind(this);
     this.submit = this.submit.bind(this);
+    this.activateSignInLink = this.activateSignInLink.bind(this);
+    this.activateClickOut = this.activateClickOut.bind(this);
   }
 
   
   componentDidMount() {
-    this.addClickEventToLink();
+    document.getElementById('sign-in').addEventListener('click', this.activateSignInLink);
+  }
+
+  componentWillUnmount() {
+    document.getElementById('sign-in').removeEventListener('click', this.activateSignInLink);
+    document.removeEventListener('click', this.activateClickOut);
+  }
+
+  activateSignInLink(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    event.currentTarget.className = 'show';
+    if(event.target.className.includes('submit')) {
+      this.submit(event);
+      let newClassName = event.currentTarget.className;
+      newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
+      event.currentTarget.className = newClassName;
+
+      document.removeEventListener('click', this.activateClickOut);
+    }
+
+    document.addEventListener('click', this.activateClickOut);
+  }
+
+  activateClickOut(event) {
+    event.preventDefault();
+
+    let signInLink = document.getElementById('sign-in');
+    let newClassName = signInLink.className;
+    newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
+    signInLink.className = newClassName;
+
+    
+    this.setState({ username: '',
+                    first_name: '',
+                    last_name: '',
+                    email: '',
+                    password: '',
+                    image_url: ''
+                  });
+
+    document.removeEventListener('click', this.activateClickOut);
   }
   
-  
-  // }
   
   update(field) {
     return e => {
@@ -35,13 +76,13 @@ class AuthForm extends React.Component {
   submit(e) {
     e.preventDefault();
     this.submitAction(this.state);
-    this.setState(this.state = { username: '',
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-    image_url: ''
-  });
+    this.setState({ username: '',
+                    first_name: '',
+                    last_name: '',
+                    email: '',
+                    password: '',
+                    image_url: ''
+                  });
 }
 
 render() {
@@ -85,44 +126,44 @@ render() {
   // );
   }
   
-  addClickEventToLink() {
-    document.getElementById("sign-in").addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      let currentClass = event.currentTarget.className;
-      event.currentTarget.className = 'show';
-      if (event.target.className.includes('submit')){
-        this.submit(event);
-        this.setState(this.state = { username: '',
-                                first_name: '',
-                                last_name: '',
-                                email: '',
-                                password: '',
-                                image_url: ''
-                                });
-        document.getElementById("sign-in").className = '';
-      }
-    });
+  // addClickEventToLink() {
+  //   document.getElementById("sign-in").addEventListener('click', (event) => {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //     let currentClass = event.currentTarget.className;
+  //     event.currentTarget.className = 'show';
+  //     if (event.target.className.includes('submit')){
+  //       this.submit(event);
+  //       this.setState(this.state = { username: '',
+  //                               first_name: '',
+  //                               last_name: '',
+  //                               email: '',
+  //                               password: '',
+  //                               image_url: ''
+  //                               });
+  //       document.getElementById("sign-in").className = '';
+  //     }
+  //   });
     
-    //handle clicking outside of form
-    document.addEventListener('click', (event) => {
-      event.preventDefault();
-      if (event.target.className !== "drop-down-authform-container" && 
-          event.target.className !== "sign-in-link") {
+  //   //handle clicking outside of form
+  //   document.addEventListener('click', (event) => {
+  //     event.preventDefault();
+  //     if (event.target.className !== "drop-down-authform-container" && 
+  //         event.target.className !== "sign-in-link") {
         
-        document.getElementById("sign-in").className = '';
+  //       document.getElementById("sign-in").className = '';
 
-        this.setState(this.state = { username: '',
-                                first_name: '',
-                                last_name: '',
-                                email: '',
-                                password: '',
-                                image_url: ''
-                                });
-      }
-    });
+  //       this.setState(this.state = { username: '',
+  //                               first_name: '',
+  //                               last_name: '',
+  //                               email: '',
+  //                               password: '',
+  //                               image_url: ''
+  //                               });
+  //     }
+  //   });
     
-  }
+  // }
 }
 
 export default AuthForm;
