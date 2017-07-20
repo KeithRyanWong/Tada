@@ -26,6 +26,16 @@
   margin-right: 20px;
 }
 
+@media (max-width: 700px), (max-height: 560px){
+  .sign-in-form {
+    right: 0;
+  }
+  .sign-in-form > input {
+    margin-right: 0;
+  }
+}
+
+
 .drop-down-authform-container > form > input {
   margin-bottom: 5px;
 }
@@ -73,4 +83,5 @@
   background: #6cfc3c;
   text-decoration: none;
 }
+
 
