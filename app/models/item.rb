@@ -5,4 +5,5 @@ class Item < ApplicationRecord
             presence: true
   
   belongs_to :project
+  has_one :user, through: :project
 end
