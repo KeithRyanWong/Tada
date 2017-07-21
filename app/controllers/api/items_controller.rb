@@ -30,8 +30,13 @@ class Api::ItemsController < ApplicationController
 
   def destroy
     @item.destroy
+    project = @item.project
+    newItemOrder = project.item_order
+    newItemOrder.delete(@item.id.to_s)
 
-    flash.now[:errors] = @project.errors.full_messages
+    project.update(item_order: newItemOrder)
+
+    flash.now[:errors] = project.errors.full_messages + @item.errors.full_messages
     render :show
   end
 

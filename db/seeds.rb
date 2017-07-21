@@ -33,4 +33,4 @@ item7 = Item.create(project_id: project2.id, source_url: "tingle.png", descripti
 item8 = Item.create(project_id: project2.id, source_url: "fridget.png", description: "something hard")
 
 project1.update(item_order: [item4.id, item3.id, item1.id, item2.id], splash_id: item2.id)
-project2.update(item_order: [item8.id, item5.id, item6.id, item.id], splash_id: item5.id)
+project2.update(item_order: [item8.id, item5.id, item6.id, item7.id], splash_id: item5.id)

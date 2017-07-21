@@ -29,9 +29,9 @@ export const updateItem = (item) => (
   })
 );
 
-export const deleteItem = (item) => (
+export const deleteItem = (itemId) => (
   $.ajax({
-    url: `/api/items/${item.id}`,
+    url: `/api/items/${itemId}`,
     method: "DELETE"
   })
 );
