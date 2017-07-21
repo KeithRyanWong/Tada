@@ -19,7 +19,7 @@ id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key (references users), indexed
 title           | string    | not null, indexed
 splash_id       | integer   | not null, foreign key (references items)
-item_order      | integer   | not null, unique
+item_order      | arr(int)  | not null, unique
 
 ### Items Table
 Column Name     | DataType  | Details
