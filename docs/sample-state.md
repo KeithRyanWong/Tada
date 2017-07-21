@@ -18,12 +18,14 @@
     }
   },
   projects: {
+    errors: [],
     byId: {
       1: {
+        id: 1
         title: "Cool Project",
         userId: 1,
         splashId: 12,
-        item_ids = [12, 54, 32]
+        item_order = [12, 54, 32]
         tag_ids: [1, 2, 3, 4],
         comment_ids: [23, 45, 76],
         likes: 89475,
@@ -32,10 +34,12 @@
     }
   },
   items: {
+    errors: [],
     byId: {
       1: {
+        id: 1
         projectId: 1,
-        title: "Cool Artwork",
+        source_url,
         description: "This is a cool artwork"
       }
     }
