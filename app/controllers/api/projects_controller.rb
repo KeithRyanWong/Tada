@@ -1,6 +1,7 @@
 class Api::ProjectsController < ApplicationController
   before_action :require_logged_in, only: [:create, :destroy, :update]
   before_action :require_project_auth, only: [:update, :destroy]
+  before_action :find_project, only: [:show]
 
   def index
     if params[:user_id].nil?
@@ -11,7 +12,6 @@ class Api::ProjectsController < ApplicationController
   end
 
   def show
-    find_project
   end
 
   def create
@@ -19,7 +19,6 @@ class Api::ProjectsController < ApplicationController
     @project.user_id = current_user.id
 
     if @project.save!
-      debugger
       render :show, status: 201
     else
       flash.now[:errors] = @project.errors.full_messages
@@ -28,8 +27,6 @@ class Api::ProjectsController < ApplicationController
   end
 
   def update
-    debugger
-    find_project
     @project.update(project_params)
 
     flash.now[:errors] = @project.errors.full_messages
