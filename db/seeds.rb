@@ -18,6 +18,7 @@ user6 = User.create(first_name: "Janet", last_name: "Lee", username: "GhettoBlas
 Project.delete_all
 
 project1 = Project.create(user_id: user1.id, title: "A collection of Goodies", splash_id: 1, item_order: [])
+project2 = Project.create(user_id: user3.id, title: "Fairies and Heartbreak", splash_id: 1, item_order: [])
 
 Item.delete_all
 
@@ -26,4 +27,10 @@ item2 = Item.create(project_id: project1.id, source_url: "twoasdf.png", descript
 item3 = Item.create(project_id: project1.id, source_url: "tree.png", description: "something sweet")
 item4 = Item.create(project_id: project1.id, source_url: "fort.png", description: "something long")
 
-project1.update(item_order: [item4.id, item3.id, item1.id, item2.id])
+item5 = Item.create(project_id: project2.id, source_url: "once.png", description: "something cool")
+item6 = Item.create(project_id: project2.id, source_url: "toasted.png", description: "something rad")
+item7 = Item.create(project_id: project2.id, source_url: "tingle.png", description: "something damp")
+item8 = Item.create(project_id: project2.id, source_url: "fridget.png", description: "something hard")
+
+project1.update(item_order: [item4.id, item3.id, item1.id, item2.id], splash_id: item2.id)
+project2.update(item_order: [item8.id, item5.id, item6.id, item7.id], splash_id: item5.id)
