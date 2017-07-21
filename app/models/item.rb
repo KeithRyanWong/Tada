@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 
-  validates :project_id,
+  validates :project,
             :source_url,
             presence: true
   
