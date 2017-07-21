@@ -6,7 +6,7 @@ class Api::ProjectsController < ApplicationController
     if params[:user_id].nil?
       @projects = Project.all
     else
-      @projects = User.find(params:user_id).projects
+      @projects = User.find(params[:user_id]).projects
     end
   end
 
@@ -27,6 +27,8 @@ class Api::ProjectsController < ApplicationController
   end
 
   def update
+    debugger
+    find_project
     @project.update(project_params)
 
     flash.now[:errors] = @project.errors.full_messages
@@ -55,6 +57,6 @@ class Api::ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :splash_id, :item_order)
+    params.require(:project).permit(:title, :splash_id, item_order: [])
   end
 end
