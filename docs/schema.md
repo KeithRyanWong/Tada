@@ -19,13 +19,13 @@ id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key (references users), indexed
 title           | string    | not null, indexed
 splash_id       | integer   | not null, foreign key (references items)
+item_order      | integer   | not null, unique
 
 ### Items Table
 Column Name     | DataType  | Details
 ----------------|-----------|-----------
 id              | integer   | not null, primary key
 project_id      | integer   | not null, foreign key (references projects), indexed
-order           | integer   | not null, unique
 source_url      | string    | not null
 description     | text      |
 
