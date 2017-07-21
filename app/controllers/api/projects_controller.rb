@@ -15,11 +15,12 @@ class Api::ProjectsController < ApplicationController
   end
 
   def create
-    @project = project.new(project_params)
-    @project.user_id = current_user.index
+    @project = Project.new(project_params)
+    @project.user_id = current_user.id
 
     if @project.save!
-      render :show, 201
+      debugger
+      render :show, status: 201
     else
       flash.now[:errors] = @project.errors.full_messages
       render :show, status: 422
