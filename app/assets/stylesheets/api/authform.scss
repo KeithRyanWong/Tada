@@ -20,10 +20,11 @@
   width: 200px;
   display: flex;
   flex-direction: column;
-  box-shadow: -3px 4px 15px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: -10px 4px 15px 1px rgba(0, 0, 0, 0.2);
   color: black;
   font-family: 'Raleway', sans-serif;
   cursor: default;
+  font-size: 13px;
 }
 
 .sign-up-form {
@@ -83,6 +84,8 @@
   background-image: -o-linear-gradient(top, #36507A, #184387);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#36507A), to(#184387));
   background-image: linear-gradient(to bottom, #36507A, #184387);
+
+  margin-top: 3px;
 }
 
 .drop-down-authform-container > form > button {
@@ -111,4 +114,5 @@
   font-size: larger;
   margin-bottom: 10px;
   font-family: 'Raleway', sans-serif;
+  font-size: 15px;
 }
