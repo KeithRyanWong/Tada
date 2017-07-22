@@ -16,11 +16,11 @@ class Header extends React.Component {
   render() {
     const authComponent = this.props.currentUser.id ? 
     <div className="sign-in-link" onClick={this.handleLogout}>Logout</div> :
-    <AuthContainer action={"Sign in"}/>;
+    <AuthContainer action={"Sign In"}/>;
     
     const signUpComponent = this.props.currentUser.id ? 
       <button>Create Project</button> :
-      <AuthContainer action={"Sign up"}/>;
+      <AuthContainer action={"Sign Up"}/>;
     return (
       <div className="header-container">
         <div className='header'>

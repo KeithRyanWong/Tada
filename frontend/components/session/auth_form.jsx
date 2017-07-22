@@ -11,7 +11,7 @@ class AuthForm extends React.Component {
                    image_url: ''
     }; 
 
-    this.submitAction = props.action === 'Sign in' ? props.login : props.signup;
+    this.submitAction = props.action === 'Sign In' ? props.login : props.signup;
 
     this.update = this.update.bind(this);
     this.submit = this.submit.bind(this);
@@ -23,19 +23,21 @@ class AuthForm extends React.Component {
   activateSignInLink(event) {
     event.preventDefault();
     event.stopPropagation();
+    this.hideForms(event.currentTarget);
     if (!event.currentTarget.className.includes('show')) {
       event.currentTarget.className += ' show';
     }
   }
 
-
   
-  hideForms() {
+  hideForms(activeEl = {}) {
     let signInLinks = document.getElementsByClassName('sign-in-link');
     Array.prototype.forEach.call(signInLinks, (link) => {
-      let newClassName = link.className;
-      newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
-      link.className = newClassName;
+      if (link != activeEl) {
+        let newClassName = link.className;
+        newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
+        link.className = newClassName;
+      }
     });
   }
   
@@ -50,15 +52,33 @@ class AuthForm extends React.Component {
   submit(e) {
     e.preventDefault();
     e.stopPropagation();
-    this.submitAction(this.state);
-    this.hideForms();
-    this.setState({ username: '',
-                    first_name: '',
-                    last_name: '',
-                    email: '',
-                    password: '',
-                    image_url: ''
-                  }); 
+
+    if (this.validInputs()) {
+      this.submitAction(this.state);
+      this.hideForms();
+      this.setState({ username: '',
+                      first_name: '',
+                      last_name: '',
+                      email: '',
+                      password: '',
+                      image_url: ''
+                    }); 
+      } else {
+        return;
+      }
+  }
+
+  validInputs() {
+    return ( this.props.action === 'Sign In' && 
+      this.state.username && 
+      this.state.password ) || 
+    ( this.props.action === 'Sign Up' && 
+      this.state.username && 
+      this.state.password &&
+      this.state.email &&
+      this.state.first_name &&
+      this.state.last_name
+    );
   }
 
   loginGuest(e) {
@@ -81,7 +101,7 @@ class AuthForm extends React.Component {
 render() {
   const {username, first_name, last_name, email, password, img_url} = this.state;
   
-  if (this.props.action === 'Sign in') {
+  if (this.props.action === 'Sign In') {
     return (
       <div>
         <div onClick={this.activateSignInLink} className="sign-in-link">Sign In
@@ -89,8 +109,8 @@ render() {
 
               <form className="sign-in-form">
                 <span className="formTitle">Sign In</span>
-                <input type="text" onChange={this.update('username')} placeholder="Username" value={username}/>
-                <input type="password" onChange={this.update('password')} placeholder="Password" value={password}/>
+                <input type="text" onChange={this.update('username')} placeholder="Username" value={username} required/>
+                <input type="password" onChange={this.update('password')} placeholder="Password" value={password} required/>
                 <button onClick={this.submit} className="submit">{this.props.action} </button>
                 <button onClick={this.loginGuest} className="submit">Guest Login</button>
               </form>
@@ -107,12 +127,12 @@ render() {
 
               <form className="sign-up-form">
                 <span className="formTitle">Sign Up</span>
-                <input type="text" onChange={this.update('username')} placeholder="Username" value={username}/>
-                <input type="text" onChange={this.update('first_name')} placeholder="First Name" value={first_name}/>
-                <input type="text" onChange={this.update('last_name')} placeholder="Last Name" value={last_name}/>
-                <input type="text" onChange={this.update('email')} placeholder="Email" value={email}/>
-                <input type="password" onChange={this.update('password')} placeholder="Password" value={password}/>
-                <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url}/>
+                <input type="text" onChange={this.update('username')} placeholder="Username" value={username} required/>
+                <input type="text" onChange={this.update('first_name')} placeholder="First Name" value={first_name} required/>
+                <input type="text" onChange={this.update('last_name')} placeholder="Last Name" value={last_name} required/>
+                <input type="text" onChange={this.update('email')} placeholder="Email" value={email} required/>
+                <input type="password" onChange={this.update('password')} placeholder="Password" value={password} required/>
+                <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url} required/>
                 <button onClick={this.submit} className="submit">{this.props.action} </button>
                 <button onClick={this.loginGuest} className="submit">Guest Login</button>
               </form>
