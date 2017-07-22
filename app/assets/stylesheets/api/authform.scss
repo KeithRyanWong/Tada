@@ -1,5 +1,8 @@
 .sign-in-link {
   color: #a4a4a4;
+  font-family: "acumin-pro","Helvetica Neue",Helvetica,Arial,メイリオ,Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3",osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .sign-in-link:hover {
@@ -11,19 +14,23 @@
   border: 1px solid #505050;
   border-radius: 3px;
   background-color: white;
-  padding: 10px;
+  padding: 20px;
+  padding-top: 30px;
   position: relative;
   width: 200px;
   display: flex;
   flex-direction: column;
-
   box-shadow: -3px 4px 15px 1px rgba(0, 0, 0, 0.2);
-
   color: black;
+
+  cursor: default;
 }
 
+.sign-up-form {
+  right: 92px;
+}
 .sign-in-form {
-  right:150px;
+  right: 180px;
 }
 .sign-in-form > input {
   margin-right: 20px;
