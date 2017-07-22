@@ -84,10 +84,11 @@ render() {
   if (this.props.action === 'Sign in') {
     return (
       <div>
-        <div onClick={this.activateSignInLink} className="sign-in-link">Sign in
+        <div onClick={this.activateSignInLink} className="sign-in-link">Sign In
           <div className="drop-down-authform-container">
 
               <form className="sign-in-form">
+                <span className="formTitle">Sign In</span>
                 <input type="text" onChange={this.update('username')} placeholder="Username" value={username}/>
                 <input type="password" onChange={this.update('password')} placeholder="Password" value={password}/>
                 <button onClick={this.submit} className="submit">{this.props.action} </button>
@@ -105,6 +106,7 @@ render() {
           <div className="drop-down-authform-container">
 
               <form className="sign-up-form">
+                <span className="formTitle">Sign Up</span>
                 <input type="text" onChange={this.update('username')} placeholder="Username" value={username}/>
                 <input type="text" onChange={this.update('first_name')} placeholder="First Name" value={first_name}/>
                 <input type="text" onChange={this.update('last_name')} placeholder="Last Name" value={last_name}/>

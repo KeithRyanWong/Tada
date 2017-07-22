@@ -1,6 +1,6 @@
 .sign-in-link {
   color: #a4a4a4;
-  font-family: "acumin-pro","Helvetica Neue",Helvetica,Arial,メイリオ,Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3",osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: bold;
   font-size: 14px;
 }
@@ -11,7 +11,7 @@
 }
 
 .drop-down-authform-container > form {
-  border: 1px solid #505050;
+  // border: 1px solid #505050;
   border-radius: 3px;
   background-color: white;
   padding: 20px;
@@ -22,7 +22,7 @@
   flex-direction: column;
   box-shadow: -3px 4px 15px 1px rgba(0, 0, 0, 0.2);
   color: black;
-
+  font-family: 'Raleway', sans-serif;
   cursor: default;
 }
 
@@ -32,52 +32,63 @@
 .sign-in-form {
   right: 180px;
 }
-.sign-in-form > input {
-  margin-right: 20px;
-}
 
 @media (max-width: 700px), (max-height: 560px){
   .sign-in-form {
     right: 0;
+    bottom: 100px;
   }
   .sign-in-form > input {
     margin-right: 0;
+  }
+
+  .sign-up-form{
+    right: 0;
+    bottom: 100px;
   }
 }
 
 
 .drop-down-authform-container > form > input {
   margin-bottom: 5px;
+  width: 80%;
+  align-self: center;
+  border: none;
+  border-bottom: 1px solid #808080;
+  padding-top: 5px;
 }
 
 .drop-down-authform-container > form > button {
   margin-bottom: 2px;
   padding: 5px;
   border-radius: 2px;
-  font-weight: bold;
+  font-weight: initial;
+  align-self: center;
+  width: 63%;
 }
 
 .drop-down-authform-container > form > button:nth-last-child(2) {
-  background: #3e6c8a;
-  background-image: -webkit-linear-gradient(top, #3e6c8a, #5295bf);
-  background-image: -o-linear-gradient(top, #3e6c8a, #5295bf);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#3e6c8a), to(#5295bf));
-  background-image: linear-gradient(to bottom, #3e6c8a, #5295bf);
-  
+  background: #36507A;
+  background-image: -webkit-linear-gradient(top, #36507A, #184387);
+  background-image: -o-linear-gradient(top, #36507A, #184387);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#36507A), to(#184387));
+  background-image: linear-gradient(to bottom, #36507A, #184387);
+
+  margin-top: 10px;
 }
 
 .drop-down-authform-container > form > button:nth-last-child(1) {
-  background: #48ff00;
-  background-image: -webkit-linear-gradient(top, #48ff00, #00ff59);
-  background-image: -o-linear-gradient(top, #48ff00, #00ff59);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#48ff00), to(#00ff59));
-  background-image: linear-gradient(to bottom, #48ff00, #00ff59);
+  background: #184387;
+  background-image: -webkit-linear-gradient(top, #36507A, #184387);
+  background-image: -o-linear-gradient(top, #36507A, #184387);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#36507A), to(#184387));
+  background-image: linear-gradient(to bottom, #36507A, #184387);
 }
 
 .drop-down-authform-container > form > button {
   border: none;
   border-radius: 4px;
-  font-family: Arial;
+  font-family: 'Raleway', sans-serif;
   color: #ffffff;
   font-size: 15px;
   padding: 10px 20px 10px 20px;
@@ -85,13 +96,19 @@
 }
 
 .drop-down-authform-container > form > button:nth-last-child(2):hover {
-  background: #3cb0fd;
+  background: #36507A;
   text-decoration: none;
 }
 
 .drop-down-authform-container > form > button:nth-last-child(1):hover {
-  background: #6cfc3c;
+  background: #36507A;
   text-decoration: none;
 }
 
-
+.formTitle {
+  align-self: center;
+  margin-top: -10px;
+  font-size: larger;
+  margin-bottom: 10px;
+  font-family: 'Raleway', sans-serif;
+}

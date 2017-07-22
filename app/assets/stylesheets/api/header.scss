@@ -5,6 +5,8 @@
 
 div.header-container {
   background-color: rgb(19, 19, 19);
+  position: fixed;
+  width: 100%;
 }
 
 div.header {
@@ -54,6 +56,12 @@ div.right > .header-content{
 }
 
 @media (max-width: 700px), (max-height: 560px){
+  div.header-container {
+    background-color: rgb(19, 19, 19);
+    position: inherit;
+    width: 100%;
+  }
+
   div.header {
     height: auto;
     margin: 10px 2px;
