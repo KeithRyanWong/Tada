@@ -1,5 +1,6 @@
 import React from 'react';
 import AuthContainer from '../session/auth_form_container';
+import CurrentUserContainer from '../session/current_user_container';
 import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
@@ -12,11 +13,10 @@ class Header extends React.Component {
     e.preventDefault();
     this.props.logout();
   }
+  // <div className="sign-in-link" onClick={this.handleLogout}>Logout</div> :
   
   render() {
-    const authComponent = this.props.currentUser.id ? 
-    <div className="sign-in-link" onClick={this.handleLogout}>Logout</div> :
-    <AuthContainer action={"Sign In"}/>;
+    const authComponent = this.props.currentUser.id ? <CurrentUserContainer/>: <AuthContainer action={"Sign In"}/>;
     
     const signUpComponent = this.props.currentUser.id ? 
       <button>Create Project</button> :

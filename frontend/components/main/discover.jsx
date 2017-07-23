@@ -21,7 +21,11 @@ class Discover extends React.Component {
       newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
       link.className = newClassName;
     });
-    this.forceUpdate();
+
+    let favicon = document.getElementsByClassName('pf-favicon')[0];
+    let newClassName = favicon.className;
+    newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
+    favicon.className = newClassName;
   }
 
   render() {
