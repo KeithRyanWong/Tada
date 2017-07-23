@@ -10,7 +10,7 @@ class AuthForm extends React.Component {
                    last_name: '',
                    email: '',
                    password: '',
-                   image_url: "http://res.cloudinary.com/krwappacademy/image/upload/c_scale,w_76/v1500776706/pfplaceholder_x0apvb.png"
+                   image_url: "pfplaceholder_x0apvb"
     }; 
 
     this.submitAction = props.action === 'Sign In' ? props.login : props.signup;
@@ -109,10 +109,10 @@ class AuthForm extends React.Component {
                     last_name: '',
                     email: '',
                     password: '',
-                    image_url: "http://res.cloudinary.com/krwappacademy/image/upload/c_scale,w_76/v1500776706/pfplaceholder_x0apvb.png"
+                    image_url: "pfplaceholder_x0apvb"
                   }); 
   }
-
+  
   openUploadWidget(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -120,14 +120,16 @@ class AuthForm extends React.Component {
     cloudinary.openUploadWidget(cloudinary_options, (error, results) => {
         if(!error) {
           this.setState({
-            image_url: `http://res.cloudinary.com/krwappacademy/image/upload/w_76,h_76,c_thumb,g_face,r_180/${results[0].public_id}.png`
+            image_url: `${results[0].public_id}`
           });
         }
     });
   }
 
 render() {
-  const {username, first_name, last_name, email, password, img_url} = this.state;
+  const {username, first_name, last_name, email, password, image_url} = this.state;
+  const fullImageUrl = image_url === 'pfplaceholder_x0apvb' ? `http://res.cloudinary.com/krwappacademy/image/upload/w_76,c_scale/${image_url}.png` : `http://res.cloudinary.com/krwappacademy/image/upload/w_76,h_76,c_thumb,g_face,r_180/${image_url}.png`;
+
   if (this.props.action === 'Sign In') {
     return (
       <div>
@@ -161,7 +163,7 @@ render() {
                 <input type="text" onChange={this.update('email')} placeholder="Email" value={email} required/>
                 <input type="password" onChange={this.update('password')} placeholder="Password" value={password} required/>
                 {/* <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url} required/> */}
-                <button className='cloudUpload' onClick={this.openUploadWidget} ><img src={this.state.image_url} className='profilePicture'/></button>
+                <button className='cloudUpload' onClick={this.openUploadWidget} ><img src={fullImageUrl} className='profilePicture'/></button>
                 <button onClick={this.submit} className="submit">{this.props.action} </button>
                 <button onClick={this.loginGuest} className="submit">Guest Login</button>
               </form>

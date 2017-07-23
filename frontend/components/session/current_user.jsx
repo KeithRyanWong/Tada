@@ -23,9 +23,11 @@ class CurrentUser extends React.Component {
 
   render() {
     let {image_url} = this.currentUser;
+    let fullImageURL = image_url ? `http://res.cloudinary.com/krwappacademy/image/upload/w_40,h_40,c_thumb,g_face,r_180/${image_url}.png` : 'http://res.cloudinary.com/krwappacademy/image/upload/w_40,h_40,c_thumb,r_180/pfplaceholder_x0apvb.png';
+
     return (
       <div onClick={this.openMenu} className="pf-favicon">
-        <img src={image_url ? image_url : 'http://res.cloudinary.com/krwappacademy/image/upload/w_40,h_40,c_thumb,r_180/pfplaceholder_x0apvb.png'}  />
+        <img src={fullImageURL}  />
         <div className="pf-menu-container">
           <div>Profile</div>
           <div onClick={this.handleLogout}>Logout</div>
