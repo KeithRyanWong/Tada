@@ -22,18 +22,6 @@ class AuthForm extends React.Component {
     this.openUploadWidget = this.openUploadWidget.bind(this);
   }
 
-  componentWillUpdate() {
-    if(document.getElementsByClassName('show').length == 0) {
-      this.setState({ username: '',
-                   first_name: '',
-                   last_name: '',
-                   email: '',
-                   password: '',
-                   image_url: "http://res.cloudinary.com/krwappacademy/image/upload/c_scale,w_76/v1500776706/pfplaceholder_x0apvb.png"
-      });
-    }
-  }
-
   activateSignInLink(event) {
     event.preventDefault();
     event.stopPropagation();
