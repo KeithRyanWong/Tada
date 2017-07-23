@@ -119,16 +119,14 @@ class AuthForm extends React.Component {
     cloudinary.openUploadWidget(cloudinary_options, (error, results) => {
         if(!error) {
           this.setState({
-            image_url: results[0].url
+            image_url: `http://res.cloudinary.com/krwappacademy/image/upload/w_76,h_76,c_thumb,g_face,r_180/${results[0].public_id}.png`
           });
-          console.log(results[0].url);
         }
     });
   }
 
 render() {
   const {username, first_name, last_name, email, password, img_url} = this.state;
-  console.log(this.state);
   if (this.props.action === 'Sign In') {
     return (
       <div>
