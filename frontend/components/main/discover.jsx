@@ -22,10 +22,19 @@ class Discover extends React.Component {
       link.className = newClassName;
     });
 
-    let favicon = document.getElementsByClassName('pf-favicon')[0];
-    let newClassName = favicon.className;
-    newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
-    favicon.className = newClassName;
+    let favicon = document.getElementsByClassName('pf-favicon');
+    Array.prototype.forEach.call(favicon, (fav) => {
+      let newClassName = fav.className;
+      newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
+      fav.className = newClassName;
+    });
+
+    let errorSpans = document.getElementsByClassName('formErrors');
+    Array.prototype.forEach.call(errorSpans, (el) => {
+      while (el.firstChild) {
+        el.removeChild(el.firstChild);
+      }
+    });
   }
 
   render() {

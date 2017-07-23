@@ -78,6 +78,12 @@ class AuthForm extends React.Component {
                       image_url: ''
                     }); 
       } else {
+        let errorSpans = document.getElementsByClassName('formErrors');
+        Array.prototype.forEach.call(errorSpans, (span) => {
+          let error = document.createElement('p');
+          error.innerHTML = 'Please fill out all fields';
+          span.appendChild(error);
+        });
         return;
       }
   }
@@ -134,7 +140,7 @@ render() {
           <div className="drop-down-authform-container">
 
               <form className="sign-in-form">
-                
+                <span className="formErrors"></span>
                 <input type="text" onChange={this.update('username')} placeholder="Username" value={username} required/>
                 <input type="password" onChange={this.update('password')} placeholder="Password" value={password} required/>
                 <button onClick={this.submit} className="submit">{this.props.action} </button>
@@ -153,7 +159,7 @@ render() {
           <div className="drop-down-authform-container">
 
               <form className="sign-up-form">
-
+                <span className="formErrors"></span>
                 <input type="text" onChange={this.update('username')} placeholder="Username" value={username} required/>
                 <input type="text" onChange={this.update('first_name')} placeholder="First Name" value={first_name} required/>
                 <input type="text" onChange={this.update('last_name')} placeholder="Last Name" value={last_name} required/>
