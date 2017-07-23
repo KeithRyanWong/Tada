@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
     const preloadedState = { 
-      currentUser: { id: window.currentUser.id }
+      currentUser: { 
+        id: window.currentUser.id, 
+        image_url: window.currentUser.image_url 
+      }
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
