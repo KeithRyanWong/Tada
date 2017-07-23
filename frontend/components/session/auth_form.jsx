@@ -1,4 +1,6 @@
 import React from 'react';
+// import UploadProfile from './UploadProfile';
+// import cloudinary from 'cloudinary';
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -8,7 +10,7 @@ class AuthForm extends React.Component {
                    last_name: '',
                    email: '',
                    password: '',
-                   image_url: ''
+                   image_url: "http://res.cloudinary.com/krwappacademy/image/upload/c_scale,w_76/v1500776706/pfplaceholder_x0apvb.png"
     }; 
 
     this.submitAction = props.action === 'Sign In' ? props.login : props.signup;
@@ -17,8 +19,20 @@ class AuthForm extends React.Component {
     this.submit = this.submit.bind(this);
     this.activateSignInLink = this.activateSignInLink.bind(this);
     this.loginGuest = this.loginGuest.bind(this);
+    this.openUploadWidget = this.openUploadWidget.bind(this);
   }
 
+  componentWillUpdate() {
+    if(document.getElementsByClassName('show').length == 0) {
+      this.setState({ username: '',
+                   first_name: '',
+                   last_name: '',
+                   email: '',
+                   password: '',
+                   image_url: "http://res.cloudinary.com/krwappacademy/image/upload/c_scale,w_76/v1500776706/pfplaceholder_x0apvb.png"
+      });
+    }
+  }
 
   activateSignInLink(event) {
     event.preventDefault();
@@ -94,13 +108,27 @@ class AuthForm extends React.Component {
                     last_name: '',
                     email: '',
                     password: '',
-                    image_url: ''
+                    image_url: "http://res.cloudinary.com/krwappacademy/image/upload/c_scale,w_76/v1500776706/pfplaceholder_x0apvb.png"
                   }); 
+  }
+
+  openUploadWidget(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    cloudinary.openUploadWidget(cloudinary_options, (error, results) => {
+        if(!error) {
+          this.setState({
+            image_url: results[0].url
+          });
+          console.log(results[0].url);
+        }
+    });
   }
 
 render() {
   const {username, first_name, last_name, email, password, img_url} = this.state;
-  
+  console.log(this.state);
   if (this.props.action === 'Sign In') {
     return (
       <div>
@@ -108,7 +136,7 @@ render() {
           <div className="drop-down-authform-container">
 
               <form className="sign-in-form">
-                <span className="formTitle">Sign In</span>
+                
                 <input type="text" onChange={this.update('username')} placeholder="Username" value={username} required/>
                 <input type="password" onChange={this.update('password')} placeholder="Password" value={password} required/>
                 <button onClick={this.submit} className="submit">{this.props.action} </button>
@@ -121,18 +149,20 @@ render() {
     );
   } else {
     return (
+      
       <div>
         <div onClick={this.activateSignInLink} className="sign-in-link">Sign Up
           <div className="drop-down-authform-container">
 
               <form className="sign-up-form">
-                <span className="formTitle">Sign Up</span>
+
                 <input type="text" onChange={this.update('username')} placeholder="Username" value={username} required/>
                 <input type="text" onChange={this.update('first_name')} placeholder="First Name" value={first_name} required/>
                 <input type="text" onChange={this.update('last_name')} placeholder="Last Name" value={last_name} required/>
                 <input type="text" onChange={this.update('email')} placeholder="Email" value={email} required/>
                 <input type="password" onChange={this.update('password')} placeholder="Password" value={password} required/>
-                <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url} required/>
+                {/* <input type="text" onChange={this.update('img_url')} placeholder="img_url" value={img_url} required/> */}
+                <button className='cloudUpload' onClick={this.openUploadWidget} ><img src={this.state.image_url} className='profilePicture'/></button>
                 <button onClick={this.submit} className="submit">{this.props.action} </button>
                 <button onClick={this.loginGuest} className="submit">Guest Login</button>
               </form>

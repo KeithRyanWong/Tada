@@ -21,6 +21,7 @@ class Discover extends React.Component {
       newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
       link.className = newClassName;
     });
+    this.forceUpdate();
   }
 
   render() {

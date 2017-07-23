@@ -5,6 +5,11 @@
   font-size: 14px;
 }
 
+.sign-in-link.show {
+  text-decoration: underline;
+  color: white;
+}
+
 .sign-in-link:hover {
   cursor: pointer;
   color: white;
@@ -71,14 +76,7 @@
 }
 
 
-.drop-down-authform-container > form > button {
-  margin-bottom: 2px;
-  padding: 5px;
-  border-radius: 2px;
-  font-weight: initial;
-  align-self: center;
-  width: 63%;
-}
+
 
 .drop-down-authform-container > form > button:nth-last-child(2) {
   background: #2399cf;
@@ -87,7 +85,7 @@
   background-image: -webkit-gradient(linear, left top, left bottom, from(#2399cf), to(#2399cf));
   background-image: linear-gradient(to bottom, #2399cf, #2399cf);
 
-  margin-top: 10px;
+  margin-top: 3px;
 }
 
 .drop-down-authform-container > form > button:nth-last-child(1) {
@@ -105,9 +103,20 @@
   border-radius: 26px;
   font-family: 'Raleway', sans-serif;
   color: #ffffff;
-  font-size: 15px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  width: 63%;
+  margin-bottom: 2px;
+  font-weight: initial;
+  align-self: center;
+}
+
+.drop-down-authform-container > form > button:nth-last-child(3) {
+  background: #ffffff;
+  margin-top: 10px;
+  color: black;
+  margin-bottom: 0px;
+  padding: 0px;
 }
 
 .drop-down-authform-container > form > button:nth-last-child(2):hover {
@@ -118,13 +127,4 @@
 .drop-down-authform-container > form > button:nth-last-child(1):hover {
   background: #4099cf;
   text-decoration: none;
-}
-
-.formTitle {
-  align-self: center;
-  margin-top: -10px;
-  font-size: larger;
-  margin-bottom: 10px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 15px;
 }
