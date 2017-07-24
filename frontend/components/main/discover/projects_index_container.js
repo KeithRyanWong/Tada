@@ -5,6 +5,7 @@ import { requestAllProjects } from '../../../actions/projects_actions';
 
 const mapStateToProps = (state) => ({
   currentUser: state.currentUser,
+  projects: state.projects.byId,
   state
 });
 
