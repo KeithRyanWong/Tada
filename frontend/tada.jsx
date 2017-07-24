@@ -5,6 +5,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
+import * as asd from './actions/projects_actions';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
