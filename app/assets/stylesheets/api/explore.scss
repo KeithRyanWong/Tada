@@ -29,12 +29,17 @@
   .logo2 {
     display: none;
   }
+  .splash-container {
+    display: none;
+  }
 }
 
-.splash-container {
+.content-container {
   z-index: -100;
-  width: 100vw;
+  // width: 100vw;
 }
+
+
 .splash-text {
   font-family: Arial;
   font-weight: bolder;

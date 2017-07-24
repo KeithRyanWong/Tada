@@ -22,8 +22,10 @@ class ProjectsIndex extends React.Component {
         <div className="splash-text">Showcase & Discover<br />Creative Work</div>
     </div>;
     return(
-      <div className='splash-container'>
-        {splash}
+      <div className='content-container'>
+        <div className='splash-container'>
+          {splash}
+        </div>
       </div>
     );
   }
