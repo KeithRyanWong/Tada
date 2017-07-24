@@ -7,11 +7,11 @@ class ProjectsIndex extends React.Component {
   }
 
   componentWillMount() {
-    
+    this.props.requestAllProjects();
   }
 
   render() {
-    let splash = this.currentUser ? null : <div>
+    let splash = this.currentUser.id ? null : <div>
       <video poster="http://res.cloudinary.com/krwappacademy/image/upload/v1500921457/splash%20still.png" className="splashvid" autoPlay loop>
         <source src="http://res.cloudinary.com/krwappacademy/video/upload/ac_none,c_scale,h_300,q_100,vc_auto,w_1920/v1500858823/loop.mp4" />
         <source src="http://res.cloudinary.com/krwappacademy/video/upload/ac_none,c_fill,h_300,q_100,vc_auto,w_1920/v1500858823/loop.webm" />
@@ -23,8 +23,58 @@ class ProjectsIndex extends React.Component {
         <div className='splash-container'>
           {splash}
         </div>
-        <div className="projects-index-item-container">
-
+        <div className="explore-projects-index-item-container">
+          <div className="projects-index-item-container">
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+            <div className="projects-index-item"></div>
+          </div>
         </div>
       </div>
     );
