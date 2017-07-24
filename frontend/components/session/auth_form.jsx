@@ -100,7 +100,7 @@ class AuthForm extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     this.props.login({
-      username: 'KRWong12',
+      username: 'SunTanJar',
       password: 'thisisapass'
     });
     this.hideForms();
