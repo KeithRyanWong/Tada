@@ -15,7 +15,7 @@
   grid-area: row3 / columns-start / rows-end / columns-end
 }
 
-@media (max-width: 700px), (max-height: 560px){
+@media (max-width: 830px), (max-height: 560px){
   .header-container{
     grid-area: rows-start / columns-start / rows-end / column2
   }
@@ -41,6 +41,7 @@
 .splash-container {
   z-index: -2;
   position: fixed;
+  width: 100vw;
   top: -23px;
   letter-spacing: 5px;
 }
