@@ -64,12 +64,13 @@ div.right > .header-content{
 
   div.header {
     height: auto;
-    margin: 10px 2px;
+    margin: 10px 0;
     align-self: stretch;
     justify-self: center;
     display: flex;  
     flex-direction: column;
     flex-wrap: nowrap;
+    position: fixed;
   }
 
   div.header-section {
