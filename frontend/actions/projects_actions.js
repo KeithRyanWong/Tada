@@ -9,13 +9,13 @@ export const receiveProjects = (projects) => ({
   projects
 });
 
-export const receiveErrors = (errors) => ({
+export const receiveErrors = ({ errors }) => ({
   type: RECEIVE_ERRORS,
   errors
 });
 
 export const requestAllProjects = () => (dispatch) => {
-  APIUtil.fetchProjects().then(data => dispatch(receiveProjects(data)), errs => dispatch(receiveErrors(errs)));
+  APIUtil.fetchProjects().then(data => dispatch(receiveProjects(data)), errs => dispatch(receiveErrors(errs.responseJSON)));
 };
 
 window.requestAllProjects = requestAllProjects;

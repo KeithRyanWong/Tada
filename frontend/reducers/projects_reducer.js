@@ -5,9 +5,8 @@ const projectsReducer = (state={}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_PROJECTS:
-      return state;
-    case RECEIVE_PROJECT:
-      return action.currentUser;
+      const byId = action.projects.byId;
+      return merge({}, state, { byId });
     case RECEIVE_ERRORS:
       const errors = action.errors;
       return merge({}, state, { errors });
