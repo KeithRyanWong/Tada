@@ -1,6 +1,8 @@
 import React from 'react';
 //header container
+
 import HeaderContainer from './header_container';
+import ProjectsIndexContainer from './discover/projects_index_container';
 
 class Discover extends React.Component {
   constructor(props) {
@@ -41,6 +43,7 @@ class Discover extends React.Component {
     return (
       <div className="grid-container" onClick={this.activateClickOut}>
         <HeaderContainer />
+         <ProjectsIndexContainer /> 
         {/* <div style={ {height: '900px' }}></div> */}
       </div>
     );

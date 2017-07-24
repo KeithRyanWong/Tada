@@ -17,8 +17,8 @@ user6 = User.create(first_name: "Janet", last_name: "Lee", username: "GhettoBlas
 
 Project.delete_all
 
-project1 = Project.create(user_id: user1.id, title: "A collection of Goodies", splash_id: 1, item_order: [])
-project2 = Project.create(user_id: user3.id, title: "Fairies and Heartbreak", splash_id: 1, item_order: [])
+project1 = Project.new(user_id: user1.id, title: "A collection of Goodies", splash_id: 1, item_order: [])
+project2 = Project.new(user_id: user3.id, title: "Fairies and Heartbreak", splash_id: 1, item_order: [])
 
 Item.delete_all
 

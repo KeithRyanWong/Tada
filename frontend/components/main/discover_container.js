@@ -3,6 +3,7 @@ import Discover from './discover';
 
 
 const mapStateToProps = (state) => ({
+  currentUser: state.currentUser,
   state
 });
 

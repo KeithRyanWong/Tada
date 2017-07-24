@@ -29,7 +29,7 @@ class CurrentUser extends React.Component {
       <div onClick={this.openMenu} className="pf-favicon">
         <img src={fullImageURL}  />
         <div className="pf-menu-container">
-          <div>Profile</div>
+          <div>View Profile</div>
           <div onClick={this.handleLogout}>Logout</div>
         </div>
       </div>

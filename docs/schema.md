@@ -27,6 +27,7 @@ Column Name     | DataType  | Details
 id              | integer   | not null, primary key
 project_id      | integer   | not null, foreign key (references projects), indexed
 source_url      | string    | not null
+source_type     | string    | not null
 description     | text      |
 
 ### Likes Table (Join table)

@@ -1,5 +1,5 @@
 .grid-container{
-  height: 100%;
+  height: 100vh;
   display: grid;
   grid-template-columns: [columns-start] 70px [column2] auto [columns-end];
   grid-template-rows: [rows-start] 60px [row2] auto [row3] 30px [rows-end];
@@ -29,4 +29,20 @@
   .logo2 {
     display: none;
   }
+}
+
+.splash-container {
+  width: 100vw;
+}
+.splash-text {
+  font-family: Arial;
+  font-weight: bolder;
+  font-size: 4em;
+  position: relative;
+  color: white;
+  text-align: center;
+  bottom: 200px;
+  width: 700px;
+  height: 200px;
+  margin: 0 auto;
 }
