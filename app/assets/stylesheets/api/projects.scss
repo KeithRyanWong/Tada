@@ -36,11 +36,23 @@
 
 .projects-index-item {
   width: 200px;
-  height: 300px;
-  background-color: red;
-  border: 1px solid black;
+  height: 245px;
+
   border-radius: 5px;
   margin-bottom: 20px;
   margin-left: 15px;
   margin-right: 15px;
+  box-shadow: -5px 4px 15px 1px rgba(0, 0, 0, 0.2);
+}
+.projects-index-item > img {
+  border-radius: 5px 5px 0 0;
+}
+.projects-index-item > span {
+  display: block;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bolder;
 }
