@@ -4,14 +4,14 @@ export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS";
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
-export const receiveProjects = (projects) => ({
+export const receiveProjects = (data) => ({
   type: RECEIVE_PROJECTS,
-  projects
+  data
 });
 
-export const receiveErrors = ({ errors }) => ({
+export const receiveErrors = (data) => ({
   type: RECEIVE_ERRORS,
-  errors
+  errors: data.projects.errors
 });
 
 export const requestAllProjects = () => (dispatch) => {
