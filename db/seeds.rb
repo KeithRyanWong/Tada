@@ -20,6 +20,8 @@ project1 = Project.create(user_id: user1.id, title: "What're you looking at?", s
 project2 = Project.create(user_id: user3.id, title: "Feast of the Eyes", splash_id: 1, item_order: [])
 project3 = Project.create(user_id: user3.id, title: "Poppin", splash_id: 1, item_order: [])
 
+
+
 Item.delete_all
 
 item1 = Item.create(project_id: project1.id, source_url: "project1/allef-vinicius-107831", description: "Something good", source_type: 'png')
@@ -46,3 +48,33 @@ item18 = Item.create(project_id: project3.id, source_url: "project4/588727175_rk
 project1.update(item_order: [item7.id, item4.id, item3.id, item5.id,item1.id, item2.id, item6.id], splash_id: item5.id)
 project2.update(item_order: [item8.id, item9.id, item10.id, item12.id, item11.id], splash_id: item9.id)
 project3.update(item_order: [item13.id, item18.id, item14.id, item15.id, item16.id, item17.id], splash_id: item15.id)
+
+
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
