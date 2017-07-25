@@ -14,7 +14,7 @@ class ProjectView extends React.Component {
         <ul>
           {this.items.map((item) => (
             <li key={item.id} className='project-item'>
-              {item.source_type = 'png' ? <img src={`http://res.cloudinary.com/krwappacademy/image/upload/v1500849207/${item.source_url}.png`} /> : <p>This is a vid</p>}
+              {item.source_type === 'png' ? (<img src={`http://res.cloudinary.com/krwappacademy/image/upload/c_thumb,h_200,w_200/v1500849204/${item.source_url}.png`} />) : (<p>This is a vid</p>)}
               <p>{item.description}</p>
             </li>
           ))}
