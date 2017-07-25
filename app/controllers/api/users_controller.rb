@@ -2,6 +2,17 @@ class Api::UsersController < ApplicationController
   before_action :require_logged_in, only: [:update]
   before_action :require_logged_out, only: [:create]
 
+  def index
+    @users = User.all
+    
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @projects = @user.projects
+    render :index
+  end
+
   def create
     @user = User.new(user_params)
 

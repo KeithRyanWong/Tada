@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       resources :comments, only: [:index]
     end
 
+    resources :users, except: [:new, :create, :edit, :update, :destroy]
+
     resources :items, except: [:index, :new, :edit]
 
     resources :comments, except: [:create, :new, :edit, :show]
