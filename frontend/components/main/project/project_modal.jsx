@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-
+import ProjectViewContainer from './project_view_container';
 
 const style = {
   overlay : {
@@ -70,7 +70,7 @@ class BoardDetailModal extends React.Component {
           onRequestClose={this.closeModal}
           style = {style}
           contentLabel="Board Modal">
-          HI
+          <ProjectViewContainer project={project}/>
         </Modal>
       </div>
     );
