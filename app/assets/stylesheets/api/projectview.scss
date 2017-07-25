@@ -1,16 +1,33 @@
+.modal-content {
+  width: 100%;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+
+
 li.project-item {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .project-item > img {
   width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.project-item > video {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
 }
 
 .project-item > p {
-  padding: 10px 0;
+  // padding: 10px 0;
   font-family: 'Bellefair', serif;
   font-size: larger;
-  margin: 10px 0 40px 0;
+  // margin: 10px 0 40px 0;
   text-align: center;
-  border-top: 1px solid rgba(152, 151, 151, 0.31);
 }
