@@ -15,8 +15,19 @@ export const receiveErrors = (data) => ({
 });
 
 export const requestAllProjects = () => (dispatch) => {
-  APIUtil.fetchProjects().then(data => dispatch(receiveProjects(data)), errs => dispatch(receiveErrors(errs.responseJSON)));
+  APIUtil.fetchProjects().then(
+    data => dispatch(receiveProjects(data)), 
+    errs => dispatch(receiveErrors(errs.responseJSON))
+  );
 };
+
+export const requestUserProjects = (id) => (dispatch) => {
+  APIUtil.fetchUserProjects(id).then(
+    data => dispatch(receiveProjects(data)), 
+    errs => dispatch(receiveErrors(errs.responseJSON))
+  );
+};
+
 
 window.requestAllProjects = requestAllProjects;
 window.fetchProjects = APIUtil.fetchProjects;
