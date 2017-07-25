@@ -32,7 +32,6 @@ class AuthForm extends React.Component {
   }
 
   componentWillReceiveProps(nextprops) {
-    console.log(nextprops, ' this is it');
     if(nextprops.currentUser.errors[0]) {
       document.getElementsByClassName('sign-in-link')[1].className += ' show';
     }
