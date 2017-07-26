@@ -3,21 +3,31 @@ import React from 'react';
 class Details extends React.Component {
   constructor(props) {
     super(props);
-    this.renderProfile = this.renderProfile.bind(this);
+    this.renderProfile = this.renderProfilePicture.bind(this);
+    this.renderProfileDetails = this.renderProfileDetails.bind(this);
   }
 
-  renderProfile() {
-    console.log(this.props);
+  renderProfilePicture() {
     let { user } = this.props;
-
-
     if (user) {
       return (
-        <img src={`http://res.cloudinary.com/krwappacademy/image/upload/c_fill,g_face,h_300,r_180,w_300/v1500847155/${user.image_url}.png`}/>
+          <img src={`http://res.cloudinary.com/krwappacademy/image/upload/c_fill,g_face,h_300,r_180,w_300/v1500847155/${user.image_url}.png`} className='portfolio-picture'/>
       );
-    } else {
+    }
+  }
+
+  renderProfileDetails() {
+    let { user } = this.props;
+    if (user) {
       return (
-        <div>Hi</div>
+          <div className='portfolio-details'>
+            <p>
+              {user.first_name + ' ' + user.last_name}
+            </p>
+            {/* <div>
+              {user.bio}
+            </div> */}
+          </div>
       );
     }
   }
@@ -25,7 +35,8 @@ class Details extends React.Component {
   render() {
     return(
       <div className='portfolio-details-container'>
-        { this.renderProfile()} 
+        {this.renderProfilePicture()}
+        {this.renderProfileDetails()}
       </div>
     );
   }
