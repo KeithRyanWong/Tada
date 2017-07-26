@@ -13,7 +13,7 @@ class Details extends React.Component {
 
     if (user) {
       return (
-        <img src={`http://res.cloudinary.com/krwappacademy/image/upload/w_40,h_40, g_face,r_180/${user.image_url}.png`}/>
+        <img src={`http://res.cloudinary.com/krwappacademy/image/upload/c_fill,g_face,h_300,r_180,w_300/v1500847155/${user.image_url}.png`}/>
       );
     } else {
       return (
