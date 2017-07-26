@@ -23,7 +23,7 @@ class PortfolioView extends React.Component {
     let { currentUserm, userProjects, followedProjects } = this.props;
     let projectsShown = this.state.projectsShown;
     return (
-      <div>
+      <div className="portfolio-view-wrapper">
         {/* <DetailsContainer /> */}
         {/* 2 buttons with onClick={switchView} */}
         <UserAndFollowsContainer projects={ projectsShown === 'user' ? userProjects : followedProjects }/>  

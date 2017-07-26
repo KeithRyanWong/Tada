@@ -42,7 +42,7 @@ class Discover extends React.Component {
   render() {
     return (
       <div className="grid-container" onClick={this.activateClickOut}>
-        <HeaderContainer />
+        {/* <HeaderContainer /> */}
         <ProjectsIndexContainer /> 
         {/* <div style={ {height: '900px' }}></div> */}
       </div>

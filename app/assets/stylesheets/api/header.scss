@@ -57,14 +57,16 @@ div.right > .header-content{
 
 @media (max-width: 830px), (max-height: 560px){
   div.header-container {
-    background-color: rgb(19, 19, 19);
-    position: inherit;
-    width: 100%;
+    background-color: #131313;
+    position: fixed;
+    width: 60px;
+    height: 100vh;
   }
 
   div.header {
     height: auto;
-    margin: 10px 0;
+    width: 40px;
+    margin: 10px;
     align-self: stretch;
     justify-self: center;
     display: flex;  
@@ -92,5 +94,8 @@ div.right > .header-content{
   } 
   .logo2 {
     display: none;
+  }
+  .pf-menu-container {
+    left: 0;
   }
 }

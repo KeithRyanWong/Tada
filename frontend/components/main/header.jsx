@@ -7,6 +7,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.hideForms = this.hideForms.bind(this);
   }
 
   handleLogout(e) {
@@ -14,7 +15,32 @@ class Header extends React.Component {
     this.props.logout();
   }
   // <div className="sign-in-link" onClick={this.handleLogout}>Logout</div> :
-  
+  hideForms(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    let signInLinks = document.getElementsByClassName('sign-in-link');
+    Array.prototype.forEach.call(signInLinks, (link) => {
+      let newClassName = link.className;
+      newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
+      link.className = newClassName;
+    });
+
+    let favicon = document.getElementsByClassName('pf-favicon');
+    Array.prototype.forEach.call(favicon, (fav) => {
+      let newClassName = fav.className;
+      newClassName = newClassName.split(' ').filter((name) => (name !== 'show')).join(' ');
+      fav.className = newClassName;
+    });
+
+    let errorSpans = document.getElementsByClassName('formErrors');
+    Array.prototype.forEach.call(errorSpans, (el) => {
+      while (el.firstChild) {
+        el.removeChild(el.firstChild);
+      }
+    });
+  }
+
   render() {
     const authComponent = this.props.currentUser.id ? <CurrentUserContainer/>: <AuthContainer action={"Sign In"}/>;
     
@@ -22,7 +48,7 @@ class Header extends React.Component {
       <button>Create Project</button> :
       <AuthContainer action={"Sign Up"}/>;
     return (
-      <div className="header-container">
+      <div className="header-container" onClick={this.hideForms}>
         <div className='header'>
           <div className='header-section left'>
             <div className='header-content'>
