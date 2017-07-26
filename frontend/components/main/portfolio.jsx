@@ -14,6 +14,14 @@ class Portfolio extends React.Component{
     this.props.fetchUser(this.props.match.params.id);
   }
 
+  componentWillReceiveProps(nextProps) {
+    const thisUser = this.props.match.params.id;
+    const nextUser = nextProps.match.params.id;
+    if(thisUser !== nextUser) {
+      this.props.fetchUser(nextUser);
+    }
+  }
+
   activateClickOut(e) {
     event.preventDefault();
     event.stopPropagation();
