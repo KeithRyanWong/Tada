@@ -3,12 +3,15 @@ class Api::UsersController < ApplicationController
   before_action :require_logged_out, only: [:create]
 
   def index
-    @users = User.all
+    @users = User.all.includes(:projects)
   end
 
   def show
     @user = User.find(params[:id])
     @projects = @user.projects
+    @project_ids = @user.projects.map do |project|
+      project.id
+    end
     #can fetch user followed projects here once implemented
     render :index
   end
