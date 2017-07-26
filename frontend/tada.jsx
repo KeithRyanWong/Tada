@@ -5,7 +5,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
-import * as asd from './actions/projects_actions';
+// import * as asd from './actions/users_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -31,3 +31,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ReactDOM.render(<Root store={store}/>, root);
 });
+
+// window.asd = asd;
