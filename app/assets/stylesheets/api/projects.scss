@@ -8,6 +8,7 @@
   position: relative;
   top: 215px;
   z-index: 1;
+  transition: all .3s linear .2s;
 }
 .explore-projects-index-item-container.move-up {
   top: 0;

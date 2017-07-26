@@ -47,6 +47,16 @@ div.right > .header-content{
   margin-right: 7px;
 }
 
+div.header-content > button {
+  border: 0;
+  border-radius: 30px;
+  padding: 10px 20px;
+  background-color: #0057ff;
+  color: white;
+  letter-spacing: 1px;
+  font-size: .8em;
+}
+
 .logo {
   width: 55px;
   height: 55px;
