@@ -20,11 +20,12 @@ class PortfolioView extends React.Component {
   }
 
   render(){
-    let { currentUserm, userProjects, followedProjects } = this.props;
+    let { currentUser, userProjects, followedProjects } = this.props;
     let projectsShown = this.state.projectsShown;
+    let profileId = this.props.match.params.id;
     return (
       <div className="portfolio-view-wrapper">
-         <DetailsContainer /> 
+        <DetailsContainer profileId={profileId}/> 
         {/* 2 buttons with onClick={switchView} */}
         <UserAndFollowsContainer projects={ projectsShown === 'user' ? userProjects : followedProjects }/>  
       </div>

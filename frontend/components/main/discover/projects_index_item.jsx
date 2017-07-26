@@ -7,6 +7,7 @@ class ProjectsIndexItem extends React.Component {
   }
   
   render() {
+
     const {items, project} = this.props;
     return (
       <div >
