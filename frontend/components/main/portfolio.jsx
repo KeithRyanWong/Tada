@@ -10,6 +10,10 @@ class Portfolio extends React.Component{
     this.activateClickOut = this.activateClickOut.bind(this);
   }
 
+  componentWillMount() {
+    this.props.fetchUser(this.props.match.params.id);
+  }
+
   activateClickOut(e) {
     event.preventDefault();
     event.stopPropagation();
@@ -40,10 +44,11 @@ class Portfolio extends React.Component{
   }
 
   render() {
+
     return(
       <div className="portfolio-grid-container" onClick={this.activateClickOut}>
         <HeaderContainer />
-        <PortfolioViewContainer />
+        <PortfolioViewContainer />  
       </div>
     );
   }

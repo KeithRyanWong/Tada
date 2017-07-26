@@ -9,7 +9,6 @@ const projectsReducer = (state=NULLSTATE, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_USER:
-    debugger;
       const byId = action.data.users.byId;
       return merge({}, state, { byId });
     case RECEIVE_ERRORS:

@@ -14,3 +14,14 @@ export const selectProjectItems = (state, project) => {
     }
   });
 };
+
+export const selectUserProject = (state, userId) => {
+  if(state.projects.byId === undefined) {
+    return [];
+  }
+  let keys = Object.keys(state.projects.byId);
+  return keys.map((key) => (state.projects.byId[key]));
+};
+export const selectUserFollowedProjects = (state, userId) => {
+  return [];//Implement!
+};
