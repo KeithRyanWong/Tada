@@ -19,7 +19,7 @@ const style = {
     bottom                     : 0,
     left                       : '25%',
     right                      : '25%',
-    border                     : '1px solid #ccc',
+    border                     : 0,
     overflow                   : 'auto',
     WebkitOverflowScrolling    : 'touch',
     borderRadius               : '0',

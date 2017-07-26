@@ -1,9 +1,6 @@
 .portfolio-grid-container{
   height: 100vh;
-  display: grid;
-  height: 0;
+  width: 100vw;
   z-index: -300;
-  grid-template-columns: [columns-start] 70px [column2] auto [columns-end];
-  grid-template-rows: [rows-start] 60px [row2] auto [row3] 30px [rows-end];
 }
 

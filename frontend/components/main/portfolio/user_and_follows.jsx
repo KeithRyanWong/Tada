@@ -9,13 +9,15 @@ class UserAndFollows extends React.Component {
   render() {
     let { projects } = this.props;
     return(
-      <div className="portfolio-projects-index-container">
-        <div className={`explore-projects-index-item-container`}>
-           <div className="portfolio-index-items-container">
+        <div className='portfolio-projects-index-item-container'>
+          <div className="portfolio-project-control">
+            <button>User projects</button>
+            <button>Followed projects</button>
+          </div>
+          <div className="portfolio-index-items-container">
             {projects.map((project) => (<ProjectsIndexItem key={project.id} project={project}/>))}
           </div> 
         </div>
-      </div>
     );
   }
 }
