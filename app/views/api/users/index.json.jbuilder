@@ -19,6 +19,7 @@ json.users do
     end
   end
 end
+
 if @projects
   json.projects do
     json.errors flash[:errors] ? flash[:errors] : []

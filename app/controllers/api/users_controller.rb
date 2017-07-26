@@ -4,12 +4,12 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
-    
   end
 
   def show
     @user = User.find(params[:id])
     @projects = @user.projects
+    #can fetch user followed projects here once implemented
     render :index
   end
 
