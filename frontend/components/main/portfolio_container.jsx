@@ -4,8 +4,6 @@ import Portfolio from './portfolio';
 import { requestUser } from '../../actions/users_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('state:', state);
-  console.log('ownProps:', ownProps);
   return({
     state
   });

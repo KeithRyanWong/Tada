@@ -44,7 +44,6 @@ class Portfolio extends React.Component{
   }
 
   render() {
-
     return(
       <div className="portfolio-grid-container" onClick={this.activateClickOut}>
         <HeaderContainer />

@@ -16,12 +16,13 @@ export const selectProjectItems = (state, project) => {
 };
 
 export const selectUserProject = (state, userId) => {
-  if(state.projects.byId === undefined) {
+  if(state.projects.byId === undefined || state.users.byId[userId] === undefined ) {
     return [];
   }
-  let keys = Object.keys(state.projects.byId);
-  return keys.map((key) => (state.projects.byId[key]));
+  let project_ids = state.users.byId[userId].projects;
+  return project_ids.map(key => state.projects.byId[key]);
 };
+
 export const selectUserFollowedProjects = (state, userId) => {
   return [];//Implement!
 };

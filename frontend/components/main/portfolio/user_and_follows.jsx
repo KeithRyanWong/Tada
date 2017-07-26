@@ -8,10 +8,11 @@ class UserAndFollows extends React.Component {
    
   render() {
     let { projects } = this.props;
+    console.log('HELLLOOO', this.props);
     return(
-      <div>
+      <div className="portfolio-projects-index-container">
         <div className={`explore-projects-index-item-container`}>
-           <div className="projects-index-item-container">
+           <div className="portfolio-index-items-container">
             {projects.map((project) => (<ProjectsIndexItem key={project.id} project={project}/>))}
           </div> 
         </div>
