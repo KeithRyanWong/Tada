@@ -8,7 +8,6 @@ class UserAndFollows extends React.Component {
    
   render() {
     let { projects } = this.props;
-    console.log('HELLLOOO', this.props);
     return(
       <div className="portfolio-projects-index-container">
         <div className={`explore-projects-index-item-container`}>
