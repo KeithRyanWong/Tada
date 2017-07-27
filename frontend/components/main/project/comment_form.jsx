@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +11,7 @@ class CommentForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.redirectToProfile = this.redirectToProfile.bind(this);
   }
 
   handleChange(event) {
@@ -32,6 +32,14 @@ class CommentForm extends React.Component {
     });
   }
   
+  redirectToProfile(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    this.props.history.push(`/user/${this.props.currentUser.id}`);
+  }
+
+
   render() {
     let { currentUser } = this.props;
     return (
@@ -39,7 +47,7 @@ class CommentForm extends React.Component {
         <div className="comment-count">
           Comments ({this.props.count})
         </div>
-        <div className="current-user-thumbnail">
+        <div className="current-user-thumbnail" onClick={this.redirectToProfile}>
           <img src={ currentUser.id ?`http://res.cloudinary.com/krwappacademy/image/upload/w_80,h_80,c_fill,g_face,r_180/${currentUser.image_url}.png` : "http://res.cloudinary.com/krwappacademy/image/upload/w_80,h_80,c_fill,r_180/PlaceholderPic_nq0s9d.png"}/>
         </div>
         <textarea value={this.state.body} placeholder="Liked what you saw? Leave a comment!" className='comment-form' onChange={this.handleChange} />

@@ -5,6 +5,7 @@ class Comments extends React.Component {
   constructor(props) {
     super(props);
     this.getDate = this.getDate.bind(this);
+    this.redirectToProfile = this.redirectToProfile.bind(this);
   }
 
   componentWillMount() {
@@ -18,6 +19,15 @@ class Comments extends React.Component {
     let elapsedTime = Math.floor(diff / (1000 * 60 * 60 * 24));
     return elapsedTime > 0 ? `\u00B7 ${elapsedTime} days ago` :
     "\u00B7 Today";
+  }
+
+  redirectToProfile(id) {
+    return (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        this.props.history.push(`/user/${id}`);
+    };
   }
 
   render() {
@@ -36,7 +46,7 @@ class Comments extends React.Component {
             {comments.map(
               (comment) => 
                 <li key={comment.id}>
-                  <img src={`http://res.cloudinary.com/krwappacademy/image/upload/w_40,h_40,c_thumb,g_face,r_180/${users.byId[comment.user_id].image_url}.png`} className="comment-user-pic"/>
+                  <img src={`http://res.cloudinary.com/krwappacademy/image/upload/w_40,h_40,c_thumb,g_face,r_180/${users.byId[comment.user_id].image_url}.png`} className="comment-user-pic" onClick={this.redirectToProfile(comment.user_id)}/>
                   <div>
                     <div>
                       <span>
