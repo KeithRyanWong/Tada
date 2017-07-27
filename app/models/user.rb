@@ -17,6 +17,10 @@ class User < ApplicationRecord
   has_many :projects, dependent: :destroy, inverse_of: :user
   has_many :items, through: :projects
   has_many :comments
+  has_many :likes
+  has_many :liked_projects,
+    through: :likes,
+    source: :project
 
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
