@@ -11,12 +11,10 @@ class Comments extends React.Component {
   }
 
   render() {
-
+    let { currentUser } = this.props;
     return (
       <div className="comments-section">
-        <div className="comment-count">
-          Comments ({10})
-        </div>
+        
         <CommentForm />
         <div className="comment-items-container">
           <ul className="comment-list">
