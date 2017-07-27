@@ -1,5 +1,5 @@
 class Api::CommentsController < ApplicationController
-  # before_action :require_logged_in, only: [:create]
+  before_action :require_logged_in_for_creation, only: [:create]
 
   def index
     @comments = Comment.where(project_id: params[:project_id]).includes(user: :projects)
@@ -19,14 +19,15 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @comment.user_id = current_user.id
     @users = []
-    @comments =[]
-
+    @comments = []
+    
     if !current_user
       flash.now[:errors] = ["Login required"]
       render :index, status: 401
     elsif @comment.save!
-      render :index
+      redirect_to "/api/projects/#{@comment.project_id}/comments"
     else
       flash.now[:errors] = @comment.errors.full_messages 
       render :index, status: 404
@@ -34,6 +35,15 @@ class Api::CommentsController < ApplicationController
   end
 
   private
+  def require_logged_in_for_creation
+    if !current_user
+      @users = []
+      @comments = []
+      flash.now[:errors] = ["Login required"]
+      render :index, status: 401 
+    end
+  end
+  
   def comment_params
     params.require(:comment).permit(:project_id, :body)
   end
