@@ -32,7 +32,7 @@ export const selectAllComments = (state) => {
   let keys = Object.keys(state.comments.byId);
   let comments = keys.map( key => (state.comments.byId[key]) ); 
   return comments.sort((comment1, comment2) => {
-    if(comment1.createdAt < comment2.createdAt) {
+    if(Date.parse(comment1.createdAt) < Date.parse(comment2.createdAt)) {
       return -1;
     }
     return 1;
