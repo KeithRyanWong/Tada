@@ -67,13 +67,12 @@
   border-bottom: 1px solid #e8e8e8;
   margin: 0;
   left: 10px;
-  transition: border 3s cubic-bezier(0.45, 1.59, 0.42, 1.73) 0s,  color 1s ease-in 0.3s;
+  transition: border 1s cubic-bezier(0.45, 1.59, 0.42, 1.73) 0s,  color 0.05s ease-in 0s;
   padding: 10px;
 }
 
 .portfolio-project-control > button:hover {
   border-bottom: 1px solid orangered;
-  // transition: border 1s linear 0s;
 }
 
 .portfolio-project-control > button:focus {
