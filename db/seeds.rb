@@ -78,3 +78,10 @@ Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_or
 Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
 Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
 Project.create(user_id: user3.id, title: "Poppin", splash_id: item17.id, item_order: [])
+
+
+Comment.delete_all
+Comment.create(project_id: project1.id, body: "Wow, great work! Love everything", user_id: user2.id)
+Comment.create(project_id: project1.id, body: "Thanks you for saying so!", user_id: user1.id)
+Comment.create(project_id: project1.id, body: "This is epic", user_id: user3.id)
+Comment.create(project_id: project1.id, body: "Eh", user_id: user4.id)

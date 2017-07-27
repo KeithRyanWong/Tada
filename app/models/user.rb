@@ -16,6 +16,7 @@ class User < ApplicationRecord
 
   has_many :projects, dependent: :destroy, inverse_of: :user
   has_many :items, through: :projects
+  has_many :comments
 
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness

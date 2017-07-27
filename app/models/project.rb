@@ -14,4 +14,5 @@ class Project < ApplicationRecord
   
   belongs_to :user
   has_many :items, dependent: :destroy, inverse_of: :project
+  has_many :comments, dependent: :destroy
 end
