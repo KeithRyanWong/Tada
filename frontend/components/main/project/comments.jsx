@@ -37,6 +37,7 @@ class Comments extends React.Component {
               (comment) => 
                 <li key={comment.id}>
                   <img src={`http://res.cloudinary.com/krwappacademy/image/upload/w_40,h_40,c_thumb,g_face,r_180/${users.byId[comment.user_id].image_url}.png`} className="comment-user-pic"/>
+                  <div>
                     <div>
                       <span>
                         {users.byId[comment.user_id].first_name} {users.byId[comment.user_id].last_name}
@@ -47,6 +48,7 @@ class Comments extends React.Component {
                     <div>
                       {comment.body}
                     </div>
+                  </div>
                 </li>)
             }
           </ul>
