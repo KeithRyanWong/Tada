@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { requestComments } from '../../actions/comments_actions';
-import {selectAllComments} from '../../reducers/selectors';
+import { requestComments } from '../../../actions/comments_actions';
+import {selectAllComments} from '../../../reducers/selectors';
 
 import Comments from './comments';
 
