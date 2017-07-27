@@ -55,6 +55,15 @@ div.header-content > button {
   color: white;
   letter-spacing: 1px;
   font-size: .8em;
+  transition: background-color .1s linear 0s;
+}
+
+div.header-content > button:focus {
+  outline: none;
+}
+
+div.header-content > button:active {
+  background-color: #0044ff;
 }
 
 .logo {

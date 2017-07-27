@@ -10,7 +10,7 @@ const style = {
     right                      : 0,
     bottom                     : 0,
     backgroundColor            : 'rgba(0, 0, 0, .9)',
-    zIndex                     : 10
+    zIndex                     : 999
   },
   content : {
     display                    : 'flex',
@@ -26,7 +26,7 @@ const style = {
     outline                    : 'none',
     padding                    : '0',
     backgroundColor            : '#f2f2f2',
-    zIndex                     : 11,
+    zIndex                     : 1000,
     opacity                    : 0,
     transition                 : 'opacity 0.4s'
   }
