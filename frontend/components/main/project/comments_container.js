@@ -6,6 +6,7 @@ import Comments from './comments';
 
 const mapStateToProps = (state, { projectId }) => ({
   comments: selectAllComments(state),
+  state,
   projectId
 });
 
