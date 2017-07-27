@@ -42,6 +42,9 @@
   padding: 3px 5px;
   resize: none;
   overflow: auto;
+
+  font-family: 'Source Sans Pro';
+  color: #404040;
 }
 
 .comment-form:focus {
@@ -76,6 +79,8 @@
   margin-top: 35px;
   border-top: 1px solid #dedede;
   list-style: none;
+  font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 ul.comment-list > li {
@@ -89,16 +94,19 @@ ul.comment-list > li {
 ul.comment-list > li > div > div {
   margin: 8px;
   color: #606060;
+  font-family: 'Source Sans Pro';
 }
 
 ul.comment-list > li > div > div > span:nth-child(1) {
   font-weight: bolder;
   color: #404040;
+  font-family: 'Source Sans Pro';
 }
 ul.comment-list > li > div > div > span:nth-child(2) {
   padding-left: 4px;
   font-size: .8em;
   color: #cecece;
+  font-family: 'Source Sans Pro';
 }
 
 .comment-user-pic {
