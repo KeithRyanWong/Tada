@@ -27,7 +27,3 @@ export const requestUserProjects = (id) => (dispatch) => {
     errs => dispatch(receiveErrors(errs.responseJSON))
   );
 };
-
-
-window.requestAllProjects = requestAllProjects;
-window.fetchProjects = APIUtil.fetchProjects;
