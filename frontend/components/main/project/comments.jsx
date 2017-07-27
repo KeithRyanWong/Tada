@@ -24,7 +24,7 @@ class Comments extends React.Component {
     let { currentUser, users } = this.props.state;
     let { comments } = this.props;
     //array of comment objects
-    console.log('rendering', comments);
+
 
 
     return (

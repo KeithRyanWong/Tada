@@ -13,12 +13,12 @@ const commentsReducer = (state=defaultState, action) => {
     switch(action.type) {
       case RECEIVE_COMMENT: 
         let byId = action.data.comments.byId;
-        return merge({}, state, { byId });
+        return merge({}, state, { byId, errors: [] });
       case RECEIVE_COMMENTS:
         return action.data.comments || defaultState;
       case RECEIVE_ERRORS:
         const errors = action.errors;
-        return merge({}, defaultState, { errors });
+        return merge({}, state, { errors });
       default:
         return state;
     }
