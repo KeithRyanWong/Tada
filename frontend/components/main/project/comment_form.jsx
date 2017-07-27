@@ -23,6 +23,9 @@ class CommentForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.submitComment(this.state);
+    this.setState({
+      body: ''
+    });
   }
   
   render() {
@@ -30,7 +33,7 @@ class CommentForm extends React.Component {
     return (
       <div className="comment-form-container">
         <div className="comment-count">
-          Comments ({10})
+          Comments ({this.props.count})
         </div>
         <div className="current-user-thumbnail">
           <img src={ currentUser.id ?`http://res.cloudinary.com/krwappacademy/image/upload/w_80,h_80,c_fill,g_face,r_180/${currentUser.image_url}.png` : "http://res.cloudinary.com/krwappacademy/image/upload/w_80,h_80,c_fill,r_180/PlaceholderPic_nq0s9d.png"}/>
