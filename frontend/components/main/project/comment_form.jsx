@@ -6,7 +6,8 @@ class CommentForm extends React.Component {
     super(props);
 
     this.state = {
-      comment: ''
+      body: '',
+      project_id: this.props.projectId
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -15,12 +16,13 @@ class CommentForm extends React.Component {
 
   handleChange(event) {
     event.preventDefault();
-    this.setState({comment: event.target.value});
+    event.stopPropagation();
+    this.setState({body: event.target.value});
   }
 
   handleSubmit(event) {
-    console.log(`Submitting ${this.state.comment}`)
     event.preventDefault();
+    this.props.submitComment(this.state);
   }
   
   render() {

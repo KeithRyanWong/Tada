@@ -20,7 +20,7 @@ class Comments extends React.Component {
     return (
       <div className="comments-section">
         
-        <CommentForm />
+        <CommentForm projectId={this.props.projectId}/>
         <div className="comment-items-container">
           <ul className="comment-list">
             {comments.map(

@@ -28,7 +28,6 @@ export const selectUserFollowedProjects = (state, userId) => {
 };
 
 export const selectAllComments = (state) => {
-  debugger;
   if( !state.comments.byId ) return [];
   let keys = Object.keys(state.comments.byId);
   let comments = keys.map( key => (state.comments.byId[key]) ); 
