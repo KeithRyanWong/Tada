@@ -21,11 +21,10 @@ class ProjectView extends React.Component {
               {/* <p>{item.description}</p> 
                 MAKE A TEXT ITEM
                 */}
-              {/* comments will go here */}
             </li>
           ))}
-            <CommentsContainer projectId={this.project.id}/>
         </ul>
+        <CommentsContainer projectId={this.project.id}/>
       </div>
     );
   }

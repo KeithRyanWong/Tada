@@ -12,7 +12,7 @@ class UserAndFollows extends React.Component {
         <div className='portfolio-projects-index-item-container'>
           <div className="portfolio-project-control">
             <button>User projects</button>
-            <button>Followed projects</button>
+            <button>Starred projects</button>
           </div>
           <div className="portfolio-index-items-container">
             {projects.map((project) => (<ProjectsIndexItem key={project.id} project={project}/>))}

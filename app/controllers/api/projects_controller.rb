@@ -5,7 +5,15 @@ class Api::ProjectsController < ApplicationController
 
   def index
     if params[:user_id].nil?
-      @projects = Project.all
+      @projects = Project.all.includes(likes: :user)
+      @likes = []
+      @projects.each do |project|
+        @likes.push(
+          project.likes.map do |like|
+            like.user.id
+          end
+        )
+      end
     else
       @projects = User.find(params[:user_id]).projects
     end
