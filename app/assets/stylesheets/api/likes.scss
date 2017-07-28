@@ -1,3 +1,29 @@
-// Place all the styles related to the Api::Likes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.like-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+
+
+img.like-button {
+  width: 64px;
+  height: 64px;
+  padding: 10px;
+  transition: transform 1s ease-out 0s, filter 1s ease-out 0s;
+}
+
+img.like-button.liked {
+  transform: rotate(360deg);
+}
+img.like-button.unliked {
+  transform: rotate(0deg);
+  filter: grayscale(1);
+}
+
+// img.like-button:active {
+//   padding-top: 8px;
+//   width: 68px;
+//   height: 68px;
+// }

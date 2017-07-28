@@ -41,11 +41,12 @@ class ProjectView extends React.Component {
             </li>
           ))}
         </ul>
-        <div>
+        <div className="like-button-container">
           <img src="http://res.cloudinary.com/krwappacademy/image/upload/q_100/v1501203052/if_star_1054969_1_dd8vwk.png" 
             className={`like-button ${this.project.likes.includes(currentUser.id) ? 'liked' : 'unliked'}`} 
             onClick={this.toggleLike}
           />
+          Give this a star!
         </div>
         <CommentsContainer projectId={this.project.id}/>
       </div>
