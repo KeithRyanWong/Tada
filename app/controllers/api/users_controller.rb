@@ -12,6 +12,9 @@ class Api::UsersController < ApplicationController
     @project_ids = @user.projects.map do |project|
       project.id
     end
+    @starred_project_ids = @user.liked_projects.map do |project|
+      project.id
+    end
     #can fetch user followed projects here once implemented
     render :index
   end

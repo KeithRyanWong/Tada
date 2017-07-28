@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import PortfolioView from './portfolio_view';
 import { withRouter } from 'react-router';
 import { requestUserProjects } from '../../../actions/projects_actions';
-import { selectUserProject, selectUserFollowedProjectIds } from '../../../reducers/selectors';
+import { selectUserProject, selectUserFollowedProjects } from '../../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   let userId = ownProps.match.params.id;
@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.currentUser,
     profileId: userId,
     userProjects: selectUserProject(state, userId),
+    starredProjects: selectUserFollowedProjects(state, userId)
   };
 };
 

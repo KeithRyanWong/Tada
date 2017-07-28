@@ -24,7 +24,11 @@ export const selectUserProject = (state, userId) => {
 };
 
 export const selectUserFollowedProjects = (state, userId) => {
-  return [];//Implement!
+  if(state.projects.byId === undefined || state.users.byId[userId] === undefined ) {
+    return [];//Implement!
+  }
+  let project_ids = state.users.byId[userId].starredProjects;
+  return project_ids.map(key => state.projects.byId[key]);
 };
 
 export const selectAllComments = (state) => {

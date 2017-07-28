@@ -8,26 +8,35 @@ class PortfolioView extends React.Component {
     this.state = {
       projectsShown: 'user'
     };
+    this.switchView = this.switchView.bind(this);
   }
 
   switchView(e) {
     e.preventDefault();
     e.stopPropagation();
 
+    const state = this.state.projectsShown === 'user' ? 'follows' : 'user';
+
     this.setState({
-      projectsShown: 'follows'
+      projectsShown: state
     });
   }
 
-  render(){
-    let { currentUser, userProjects, followedProjects } = this.props;
+  render() {
+    let { currentUser, userProjects, starredProjects } = this.props;
     let projectsShown = this.state.projectsShown;
     let profileId = this.props.match.params.id;
     return (
       <div className="portfolio-view-wrapper">
         <DetailsContainer profileId={profileId}/> 
         {/* 2 buttons with onClick={switchView} */}
-        <UserAndFollowsContainer projects={ projectsShown === 'user' ? userProjects : followedProjects }/>  
+        <div className='portfolio-projects-index-item-container'>
+          <div className="portfolio-project-control">
+            <button onClick={this.switchView}>User projects</button>
+            <button onClick={this.switchView}>Starred projects</button>
+          </div>
+          <UserAndFollowsContainer projects={ projectsShown === 'user' ? userProjects : starredProjects }/>  
+        </div>
       </div>
     );
   }

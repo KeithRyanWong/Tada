@@ -15,6 +15,7 @@ json.users do
       json.set! @user.id do
         json.extract! @user, :id, :first_name, :last_name, :username, :image_url
         json.projects @project_ids
+        json.starredProjects @starred_project_ids
       # json.follow_ids user.follows
       end
     end
