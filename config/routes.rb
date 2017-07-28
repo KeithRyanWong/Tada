@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :projects, only: [:index, :create, :update, :show, :destroy] do 
       resources :items, only: [:index]
       resources :comments, only: [:index]
+      resources :likes, only: [:create]
     end
 
     resources :users, except: [:new, :create, :edit, :update, :destroy]
@@ -18,8 +19,6 @@ Rails.application.routes.draw do
     resources :items, except: [:index, :new, :edit]
 
     resources :comments, except: [:new, :edit, :show]
-
-    resources :likes, only: [:create, :destroy]
 
     resources :views, only: [:create]
 
@@ -34,4 +33,6 @@ Rails.application.routes.draw do
 
     resource :session, only: [:create, :destroy]
   end
+
+  delete 'api/projects/:id/likes', to: 'api/likes#destroy', defaults: {format: :json}
 end
