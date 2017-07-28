@@ -34,5 +34,5 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
   end
 
-  delete 'api/projects/:id/likes', to: 'api/likes#destroy', defaults: {format: :json}
+  delete 'api/projects/:project_id/likes', to: 'api/likes#destroy', defaults: {format: :json}
 end
