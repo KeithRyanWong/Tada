@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @projects = @user.projects
+    @projects = (@user.projects + @user.liked_projects).uniq
     @project_ids = @user.projects.map do |project|
       project.id
     end
