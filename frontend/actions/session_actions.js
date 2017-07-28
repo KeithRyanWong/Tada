@@ -48,8 +48,3 @@ export const updateUser = user => dispatch => {
     .then(currentUser => dispatch(receiveUpdates(currentUser)),
           error => dispatch(receiveErrors(error.responseJSON)));
 };
-
-window.login = login;
-window.logout = logout;
-window.signup = signup;
-window.updateUser = updateUser;

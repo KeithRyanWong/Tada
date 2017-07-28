@@ -58,7 +58,6 @@ class BoardDetailModal extends React.Component {
 
   render() {
     const { items, project } = this.props;
-    console.log(project)
     return(
       <div>
         <div onClick={this.openModal} className="projects-index-item">

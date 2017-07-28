@@ -23,5 +23,3 @@ export const requestUser = userId => dispatch => {
     .then(data => dispatch(receiveUser(data)),
           error => dispatch(receiveErrors(error.responseJSON)));
 };
-
-window.requestUser = requestUser;
