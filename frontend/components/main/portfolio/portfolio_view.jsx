@@ -29,7 +29,6 @@ class PortfolioView extends React.Component {
     return (
       <div className="portfolio-view-wrapper">
         <DetailsContainer profileId={profileId}/> 
-        {/* 2 buttons with onClick={switchView} */}
         <div className='portfolio-projects-index-item-container'>
           <div className="portfolio-project-control">
             <button onClick={this.switchView}>User projects</button>
