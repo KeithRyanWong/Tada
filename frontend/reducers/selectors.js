@@ -25,9 +25,11 @@ export const selectUserProject = (state, userId) => {
 
 export const selectUserFollowedProjects = (state, userId) => {
   if(state.projects.byId === undefined || state.users.byId[userId] === undefined ) {
-    return [];//Implement!
+    return [];
   }
   let project_ids = state.users.byId[userId].starredProjects;
+
+  if(!project_ids)return [];
   return project_ids.map(key => state.projects.byId[key]);
 };
 
