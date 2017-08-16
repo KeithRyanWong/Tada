@@ -122,4 +122,8 @@ div.header-content > button:active {
   .pf-menu-container {
     left: 0;
   }
+
+  div.header-content > button {
+    display: none;
+  }
 }

@@ -92,6 +92,12 @@
   overflow: scroll;
 }
 
+@media (max-width: 830px), (max-height: 560px){
+  .portfolio-details-container {
+    margin-left: 60px;
+  }
+}
+
 @media (max-width: 700px), (max-height: 560px) {
   .portfolio-view-wrapper {
     flex-direction: column;
@@ -101,10 +107,14 @@
     padding-right: 60px;
   }
   .portfolio-details-container {
-    width: 99vw;
+    width: 100vw;
     right: 141px;
-    margin-left: 60px;
+    right: 100px;
+    margin-bottom: 100px;
     position: relative;
-    height: 200px;
+    height: 400px;
+    img {
+      width: 200px;
+    }
   }
 }
