@@ -29,7 +29,7 @@ module.exports = {
   entry: "./frontend/tada.jsx",
   output: {
     path: path.resolve(__dirname, "app", "assets", "javascripts"),
-    filename: "./app/assets/javascripts/bundle.js"
+    filename: "bundle.js"
   },
   plugins: plugins,
   module: {
