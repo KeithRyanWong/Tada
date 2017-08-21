@@ -16,7 +16,7 @@ export const selectProjectItems = (state, project) => {
 };
 
 export const selectUserProject = (state, userId) => {
-  if(state.projects.byId === undefined || state.users.byId[userId] === undefined ) {
+  if (state.projects.byId === undefined || state.users.byId[userId] === undefined ) {
     return [];
   }
   let project_ids = state.users.byId[userId].projects;
@@ -24,7 +24,7 @@ export const selectUserProject = (state, userId) => {
 };
 
 export const selectUserFollowedProjects = (state, userId) => {
-  if(state.projects.byId === undefined || state.users.byId[userId] === undefined ) {
+  if (state.projects.byId === undefined || state.users.byId[userId] === undefined ) {
     return [];
   }
   let project_ids = state.users.byId[userId].starredProjects;
@@ -34,7 +34,7 @@ export const selectUserFollowedProjects = (state, userId) => {
 };
 
 export const selectAllComments = (state) => {
-  if( !state.comments.byId ) return [];
+  if (!state.comments.byId) return [];
   let keys = Object.keys(state.comments.byId);
   let comments = keys.map( key => (state.comments.byId[key]) ); 
   return comments.sort((comment1, comment2) => {
@@ -43,4 +43,9 @@ export const selectAllComments = (state) => {
     }
     return 1;
   });
+};
+
+export const selectUser = (state, userId) => {
+  if (!state.users.byId || !state.users.byId[userId]) return {};
+  return state.users.byId[userId];
 };

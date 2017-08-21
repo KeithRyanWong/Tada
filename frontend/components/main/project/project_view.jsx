@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentsContainer from './comments_container';
+import ProjectDetailContainer from './project_detail_container';
 
 class ProjectView extends React.Component {
   constructor(props){
@@ -10,6 +11,11 @@ class ProjectView extends React.Component {
     this.toggleLike = this.toggleLike.bind(this);
     this.like = this.props.likeProject;
     this.unlike = this.props.unlikeProject;
+    this.requestUser = this.props.requestUser;
+  }
+
+  componentWillMount() {
+    this.requestUser(this.project.user_id);
   }
 
   toggleLike(e) {
@@ -29,6 +35,10 @@ class ProjectView extends React.Component {
     const { currentUser } = this.props.state;
     return(
       <div className='modal-content'>
+        <ProjectDetailContainer 
+          artist={this.project.user_id} 
+          project={this.project}
+        />
         <ul>
           {this.items.map((item) => (
             <li key={item.id} className='project-item'>
