@@ -24,7 +24,7 @@ class ProjectView extends React.Component {
     const { currentUser } = this.props.state;
     if (!currentUser.id || this.project.user_id === currentUser.id) {
       return;
-    } else if (this.project.likes.includes(currentUser.id)) {
+    } else if (this.props.project.likes.includes(currentUser.id)) {
       this.unlike(this.project.id);
     } else {
       this.like(this.project.id);
@@ -53,7 +53,7 @@ class ProjectView extends React.Component {
         </ul>
         <div className="like-button-container">
           <img src="http://res.cloudinary.com/krwappacademy/image/upload/q_100/v1501203052/if_star_1054969_1_dd8vwk.png" 
-            className={`like-button ${this.project.likes.includes(currentUser.id) ? 'liked' : 'unliked'}`} 
+            className={`like-button ${this.props.project.likes.includes(currentUser.id) ? 'liked' : 'unliked'}`} 
             onClick={this.toggleLike}
           />
           Give this a star!

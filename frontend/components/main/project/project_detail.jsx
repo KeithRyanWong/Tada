@@ -24,8 +24,8 @@ class ProjectDetail extends React.Component {
         <div className="project-detail">
           <div className="project-detail-left project-detail-component">
             <span><img src="http://res.cloudinary.com/krwappacademy/image/upload/c_scale,h_20/v1503368949/eye_lhddii.png"
-            /> Views</span>
-            <span><img src="http://res.cloudinary.com/krwappacademy/image/upload/c_scale,h_20/v1503368949/message_n0u23n.png" className="project-detail-message-icon"/> comments</span>
+            /></span>
+            <span><img src="http://res.cloudinary.com/krwappacademy/image/upload/c_scale,h_20/v1503368949/message_n0u23n.png" className="project-detail-message-icon"/></span>
             <span>star</span>
             <span>tags</span>
           </div>
