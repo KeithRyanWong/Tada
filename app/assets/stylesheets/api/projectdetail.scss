@@ -1,5 +1,6 @@
 .project-detail-container {
   height: 50px;
+  z-index: 1;
 }
 .project-detail {
   background-color: #131313;
@@ -7,26 +8,43 @@
   position: fixed;
   height: 50px;
   width: 86%;
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
+}
+
+.project-detail-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .project-detail-left {
   border: 1px solid black;
   flex: 1;
+  opacity: 0.3;
 }
 .project-detail-middle {
   border: 1px solid black;
   flex: 1;
   text-align: center;
+  flex-direction: column;
   h3 {
-    font-family: 'Bellefair', serif;
-    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 160%;
   }
 }
 .project-detail-right {
   border: 1px solid black;
   flex: 1;
 
+}
+
+.project-detail-message-icon {
+  position: relative;
+  top: 2px;
 }
