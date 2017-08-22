@@ -1,0 +1,32 @@
+.project-detail-container {
+  height: 50px;
+}
+.project-detail {
+  background-color: #131313;
+  color: white;
+  position: fixed;
+  height: 50px;
+  width: 86%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.project-detail-left {
+  border: 1px solid black;
+  flex: 1;
+}
+.project-detail-middle {
+  border: 1px solid black;
+  flex: 1;
+  text-align: center;
+  h3 {
+    font-family: 'Bellefair', serif;
+    font-size: 40px;
+  }
+}
+.project-detail-right {
+  border: 1px solid black;
+  flex: 1;
+
+}
