@@ -27,12 +27,14 @@ class CurrentUser extends React.Component {
   redirectToProfile(e) {
     e.preventDefault();
     e.stopPropagation();
+    let { currentUser, history } = this.props;
 
-    this.props.history.push(`/user/${this.props.currentUser.id}`);
+    history.push(`/user/${currentUser.id}`);
   }
 
   render() {
-    let {image_url} = this.currentUser;
+    let { currentUser } = this.props;
+    let { image_url } = currentUser;
     let fullImageURL = image_url ? `http://res.cloudinary.com/krwappacademy/image/upload/w_40,h_40,c_thumb,g_face,r_180/${image_url}.png` : 'http://res.cloudinary.com/krwappacademy/image/upload/w_40,h_40,c_thumb,r_180/pfplaceholder_x0apvb.png';
 
     return (

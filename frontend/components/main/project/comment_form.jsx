@@ -23,9 +23,10 @@ class CommentForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     if (!this.props.currentUser.id) {
-      event.target.innerHTML = "Must be logged in";
+      event.target.innerHTML = "Please log in";
       return;
     } 
+    if(this.state.body == '') return;
     this.props.submitComment(this.state);
     this.setState({
       body: ''
