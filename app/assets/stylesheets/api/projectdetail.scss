@@ -1,21 +1,25 @@
 .project-detail-container {
   height: 50px;
 }
+
+
 .project-detail {
-  background-color: #131313;
-  color: white;
+  background-color: #353535;
+  color: #dedede;
   position: fixed;
   height: 50px;
   width: 86%;
   display: flex;
   flex-direction: row;
+
+  transition: opacity 0.1s, bottom 0.2s;
 }
 
 .project-detail-component {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   span {
     margin-left: 10px;
     margin-right: 10px;
@@ -41,10 +45,13 @@
 }
 .project-detail-right {
   flex: 1;
-
+  
 }
 
 .project-detail-message-icon {
   position: relative;
   top: 2px;
+}
+.project-detail-container .hide {
+  opacity: 0;
 }

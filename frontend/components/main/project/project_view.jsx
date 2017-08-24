@@ -10,11 +10,44 @@ class ProjectView extends React.Component {
     this.like = this.props.likeProject;
     this.unlike = this.props.unlikeProject;
     this.requestUser = this.props.requestUser;
+    this.endOfContent = this.endOfContent.bind(this);
   }
 
   componentWillMount() {
     const { project } = this.props;
     this.requestUser(project.user_id);
+  }
+  componentDidMount() {
+    document.getElementsByClassName('modal-content')[0]
+      .parentElement
+      .onscroll = (e) => {
+        if (this.endOfContent()) {
+          const projectHeader = document.getElementsByClassName('project-detail')[0];
+          let className = projectHeader.className
+            .split(' ')
+            .filter((word) => word != 'hide')
+            .concat(['hide'])
+            .join(' ');
+          projectHeader.className = className;
+
+        } else {
+          const projectHeader = document.getElementsByClassName('project-detail')[0];
+          let className = projectHeader.className
+            .split(' ')
+            .filter((word) => word != 'hide');
+          projectHeader.className = className;
+        }
+      };
+  }
+
+  endOfContent() {
+    const projectHeader = document.getElementsByClassName('project-detail')[0].getBoundingClientRect();
+    const projectItemsList = document.getElementsByClassName('project-items-list')[0].getBoundingClientRect();
+    
+    if (projectHeader.bottom > projectItemsList.bottom)
+      return true;
+
+    return false;
   }
 
   toggleLike(e) {
@@ -32,7 +65,7 @@ class ProjectView extends React.Component {
       this.like(project.id);
     }
   }
-  
+
   render() {
     const { currentUser } = this.props.state;
     const { project, items } = this.props;
@@ -43,7 +76,7 @@ class ProjectView extends React.Component {
           artist={project.user_id} 
           project={project}
         />
-        <ul>
+        <ul className="project-items-list">
           {items.map((item) => (
             <li key={item.id} className='project-item'>
               {item.source_type === 'png' ? (<img src={`http://res.cloudinary.com/krwappacademy/image/upload/c_fill,q_auto:best,w_1100/v1500849204/${item.source_url}.png`} />) : (<video className="splashvid" autoPlay loop>
