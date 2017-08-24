@@ -15,7 +15,7 @@ json.users do
   json.byId do
     @users.each.with_index do |user, i|
       json.set! user.id do
-        json.extract! user, :id, :first_name, :last_name, :username, :image_url
+        json.extract! user, :id, :first_name, :last_name, :username, :image_url, :bio
         json.projects @project_ids[i]
       end
     end

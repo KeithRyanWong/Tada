@@ -24,9 +24,9 @@ class Details extends React.Component {
             <p>
               {user.first_name + ' ' + user.last_name}
             </p>
-            {/* <div>
+            <div>
               {user.bio}
-            </div> */}
+            </div>
           </div>
       );
     }

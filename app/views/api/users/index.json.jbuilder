@@ -5,7 +5,7 @@ json.users do
     json.byId do
       @users.each do |user|
         json.set! user.id do
-          json.extract! user, :id, :first_name, :last_name, :username, :image_url
+          json.extract! user, :id, :first_name, :last_name, :username, :image_url, :bio
         # json.follow_ids user.follows
         end
       end
@@ -13,7 +13,7 @@ json.users do
   else
     json.byId do
       json.set! @user.id do
-        json.extract! @user, :id, :first_name, :last_name, :username, :image_url
+        json.extract! @user, :id, :first_name, :last_name, :username, :image_url, :bio
         json.projects @project_ids
         json.starredProjects @starred_project_ids
       # json.follow_ids user.follows
