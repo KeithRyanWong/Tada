@@ -4,9 +4,9 @@
 
 [heroku][heroku]
 
-[heroku]: http://tada-application.herokuapp.com
+[heroku]: www.tada.site
 
-Tada is a fullstack web application inspired by Behance. It's built using Ruby on Rails as a backend framework, a PostgreSQL DB, and React.js using Redux on the frontend.
+Tada is a fullstack web application inspired by Behance. It's built using Ruby on Rails as a backend framework, a PostgreSQL Database, and React.js using Redux architecture on the frontend.
 
 
 # Features & Implementation
@@ -19,7 +19,7 @@ Tada is a fullstack web application inspired by Behance. It's built using Ruby o
 ## Comment and star projects
 ![Resize-screen](./docs/screenshots/commentandstar.gif)
 
-```javscript
+```javascript
 toggleLike(e) {
     e.preventDefault();
     e.stopPropagation();
