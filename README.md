@@ -11,11 +11,6 @@ Tada is a fullstack web application inspired by Behance. It's built using Ruby o
 
 # Features & Implementation
 
-## Responsive design
-![Resize-screen](./docs/screenshots/resize.gif)
-![Full-screen](./docs/screenshots/fullscreen.png)
-![Smaller-screen](./docs/screenshots/smallscreen.png)
-
 ## Comment and star projects
 ![Resize-screen](./docs/screenshots/commentandstar.gif)
 
